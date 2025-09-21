@@ -19,6 +19,10 @@ const Navigation = () => {
     wishlistSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
       isScrolled 
@@ -41,9 +45,9 @@ const Navigation = () => {
             <a href="#creators" className="font-body font-medium text-foreground/80 hover:text-foreground transition-smooth">
               For Creators
             </a>
-            <a href="#home" className="font-body font-medium text-foreground/80 hover:text-foreground transition-smooth">
+            <button onClick={scrollToTop} className="font-body font-medium text-foreground/80 hover:text-foreground transition-smooth">
               Home
-            </a>
+            </button>
           </div>
 
           {/* CTA Button */}
