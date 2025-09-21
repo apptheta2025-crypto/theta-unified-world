@@ -60,7 +60,7 @@ const CreateSection = () => {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {features.map((feature, index) => (
               <div key={index} className="group relative">
-                <div className="relative p-8 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:border-accent-create/50 transition-all duration-500 hover:shadow-glow-create hover:-translate-y-3">
+                <div className="relative p-8 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:border-accent-create/50 transition-all duration-500 hover:shadow-glow-create hover:-translate-y-3 h-80">
                   {/* Feature glow effect */}
                   <div className="absolute inset-0 bg-gradient-create rounded-3xl blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10" />
                   
