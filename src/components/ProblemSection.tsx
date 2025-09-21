@@ -38,6 +38,10 @@ const ProblemSection = () => {
                 🎯 End Content Fragmentation with Theta's Unified Platform
               </h3>
               
+              <p className="font-body text-base sm:text-lg text-foreground/70 text-center max-w-2xl mx-auto">
+                Stop switching between multiple apps. Theta brings all your content together in one beautiful, intelligent platform.
+              </p>
+              
               <p className="font-body text-lg text-foreground/80 leading-relaxed">
                 Today's content consumers face a frustrating reality: juggling separate apps for ebooks, different platforms for audiobooks, 
                 and yet another service for podcasts. This fragmentation creates friction in your content consumption, 
