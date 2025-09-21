@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import appMockup from '@/assets/theta-app-mockup.jpg';
+import appMockup from '@/assets/theta-home-mockup.png';
 const HeroSection = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
