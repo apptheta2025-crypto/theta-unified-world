@@ -140,7 +140,7 @@ const WishlistSection = () => {
           {/* Social Proof */}
           {waitlistCount > 0 && <div className="bg-gradient-primary/5 border border-primary/20 rounded-lg p-4 max-w-sm mx-auto">
               <p className="font-body text-sm font-medium text-primary">
-                Join over <span className="font-bold">{waitlistCount.toLocaleString()}</span> others on the waitlist!
+                You're In!! chack your email inbox
               </p>
             </div>}
 
