@@ -71,7 +71,7 @@ const WishlistSection = () => {
             />
             <Button 
               type="submit" 
-              className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring"
+              className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-full"
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Adding...' : 'Count Me In!'}
