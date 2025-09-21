@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Fonts */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Theta Design System - Modern, clean, tech-forward aesthetic
 All colors MUST be HSL.
 */

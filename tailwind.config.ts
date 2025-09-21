@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'heading': ['Gilroy', 'Manrope', 'system-ui', 'sans-serif'],
+        'heading': ['Gilroy', 'system-ui', 'sans-serif'],
         'body': ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
