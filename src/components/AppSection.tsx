@@ -1,5 +1,4 @@
 import { BookOpen, Headphones, Upload, Sparkles, List } from 'lucide-react';
-
 const features = [{
   icon: BookOpen,
   title: 'Unified Library',
@@ -21,10 +20,8 @@ const features = [{
   title: 'Smart Tools',
   description: 'Create playlists, bookmark pages, highlight text, and generate instant AI summaries of books.'
 }];
-
 const AppSection = () => {
-  return (
-    <section id="app" className="relative py-16 lg:py-24 bg-gradient-to-br from-background via-primary/5 to-accent/10 overflow-hidden">
+  return <section id="app" className="relative py-16 lg:py-24 bg-gradient-to-br from-background via-primary/5 to-accent/10 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-subtle opacity-60" />
       
@@ -35,24 +32,21 @@ const AppSection = () => {
       
       {/* Geometric Pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-        backgroundSize: '40px 40px'
-      }} />
+      backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+      backgroundSize: '40px 40px'
+    }} />
 
       <div className="container-wide relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 space-y-6">
-            <h2 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl">
-              Comprehensive Digital Library Experience
-            </h2>
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl">The Theta App</h2>
             <p className="font-heading font-semibold text-2xl sm:text-3xl text-gradient-primary text-glow">
               Read. Listen. Become.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className={`group relative ${index === 3 ? 'lg:col-start-2' : ''}`}>
+            {features.map((feature, index) => <div key={index} className={`group relative ${index === 3 ? 'lg:col-start-2' : ''}`}>
                 <div className="relative p-6 bg-card/80 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-2 h-80">
                   {/* Feature glow effect */}
                   <div className="absolute inset-0 bg-gradient-primary rounded-2xl blur-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 -z-10" />
@@ -69,13 +63,10 @@ const AppSection = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AppSection;
