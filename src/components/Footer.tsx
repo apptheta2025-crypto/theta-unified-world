@@ -1,4 +1,4 @@
-import { Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 import thetaLogo from '@/assets/theta-logo.png';
 
 const Footer = () => {
@@ -17,13 +17,6 @@ const Footer = () => {
 
           {/* Right side - Social Media Icons */}
           <div className="flex items-center space-x-4">
-            <a 
-              href="#" 
-              className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-smooth group"
-              aria-label="Follow us on Twitter"
-            >
-              <Twitter className="w-5 h-5 text-white group-hover:text-white" />
-            </a>
             <a 
               href="#" 
               className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-smooth group"
