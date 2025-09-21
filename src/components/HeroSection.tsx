@@ -33,7 +33,7 @@ const HeroSection = () => {
             </div>
 
             {/* Email Signup Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md rounded-lg">
               <Input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-12 px-4 font-body border-border focus-visible:ring-primary" required />
               <Button type="submit" className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-6 h-12 transition-spring rounded-md">
                 Join the Wishlist
