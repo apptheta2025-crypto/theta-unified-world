@@ -140,7 +140,7 @@ const WishlistSection = () => {
           {/* Social Proof */}
           {waitlistCount > 0 && <div className="bg-gradient-primary/5 border border-primary/20 rounded-lg p-4 max-w-sm mx-auto">
               <p className="font-body text-sm font-medium text-primary">
-                You're In!! chack your email inbox
+                You're In!!
               </p>
             </div>}
 
