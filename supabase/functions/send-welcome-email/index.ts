@@ -31,7 +31,8 @@ const handler = async (req: Request): Promise<Response> => {
     try {
       await resend.contacts.create({
         email: email,
-        audienceId: 'general', // You'll need to create this audience in Resend dashboard
+        unsubscribed: false,
+        audienceId: '76bd49ad-9462-4971-9ffa-6eefb60e90b0', // Replace with your actual audience ID from Resend dashboard
       });
     } catch (audienceError) {
       console.log('Contact might already exist in audience:', audienceError);
