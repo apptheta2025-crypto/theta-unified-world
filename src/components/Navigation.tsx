@@ -56,7 +56,7 @@ const Navigation = () => {
           {/* CTA Button */}
           <Button 
             onClick={scrollToWishlist}
-            className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-6 py-2 hover-glow relative overflow-hidden group"
+            className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-6 py-2 hover-glow relative overflow-hidden group rounded-full"
           >
             <span className="relative z-10">Join Waitlist ✨</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
