@@ -53,7 +53,7 @@ const AppSection = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="group relative">
-                <div className="relative p-6 bg-card/80 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-2">
+                <div className="relative p-6 bg-card/80 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-2 h-80">
                   {/* Feature glow effect */}
                   <div className="absolute inset-0 bg-gradient-primary rounded-2xl blur-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 -z-10" />
                   
