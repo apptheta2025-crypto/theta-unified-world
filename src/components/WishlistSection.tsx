@@ -1,12 +1,30 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 const WishlistSection = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showCreatorModal, setShowCreatorModal] = useState(false);
+  const [waitlistCount, setWaitlistCount] = useState(0);
   
+  useEffect(() => {
+    // Fetch waitlist count
+    const fetchCount = async () => {
+      try {
+        const { count } = await supabase
+          .from('waitlist')
+          .select('*', { count: 'exact', head: true });
+        setWaitlistCount(count || 0);
+      } catch (error) {
+        console.error('Error fetching waitlist count:', error);
+      }
+    };
+    
+    fetchCount();
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || isSubmitting) return;
@@ -29,10 +47,11 @@ const WishlistSection = () => {
         }
       } else {
         toast({
-          title: "You're in!",
+          title: "You're in for 3 months FREE! 🎉",
           description: "Welcome to the Theta universe. We'll keep you posted on our launch."
         });
         setEmail('');
+        setWaitlistCount(prev => prev + 1);
       }
     } catch (error) {
       toast({
@@ -44,7 +63,32 @@ const WishlistSection = () => {
       setIsSubmitting(false);
     }
   };
-  return <section id="wishlist" className="py-16 lg:py-24 bg-gradient-subtle text-foreground">
+
+  const handleCreatorSubmit = async (creatorEmail: string) => {
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([{ email: creatorEmail, source: 'creator' }]);
+
+      if (error && error.code !== '23505') {
+        throw error;
+      }
+      
+      toast({
+        title: "Creator interest noted! 🚀",
+        description: "We'll reach out with exclusive creator beta access."
+      });
+      setShowCreatorModal(false);
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+    }
+  };
+  return (
+    <section id="wishlist" className="py-16 lg:py-24 bg-gradient-subtle text-foreground">
       <div className="container-wide">
         <div className="text-center space-y-8 lg:space-y-10 max-w-3xl mx-auto">
           {/* Header */}
@@ -52,11 +96,35 @@ const WishlistSection = () => {
             <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl">
               Be the First to Experience <span className="text-gradient-primary">Theta</span>
             </h2>
+            
+            {/* Incentive */}
+            <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 max-w-2xl mx-auto">
+              <p className="font-body text-xl font-semibold text-primary mb-2">🎁 Early Bird Special</p>
+              <p className="font-body text-lg text-foreground/90 leading-relaxed">
+                Join now for a chance to get <span className="font-bold text-gradient-primary">3 months of Theta Premium free</span> when we launch!
+              </p>
+            </div>
+            
             <p className="font-body text-lg text-foreground/70 leading-relaxed">
-              Join our wishlist to get early access, exclusive updates, and be notified 
-              the moment we launch.
+              Get early access, exclusive updates, and be the first to know when we launch.
             </p>
+
+            {/* India Launch Notice */}
+            <div className="bg-accent/20 border border-accent/30 rounded-lg p-4 max-w-xl mx-auto">
+              <p className="font-body text-base text-foreground/80">
+                🇮🇳 <span className="font-semibold">Launching soon in India</span> • Premium plans from <span className="font-bold text-primary">₹159/month</span>
+              </p>
+            </div>
           </div>
+
+          {/* Social Proof */}
+          {waitlistCount > 0 && (
+            <div className="bg-gradient-primary/5 border border-primary/20 rounded-lg p-4 max-w-sm mx-auto">
+              <p className="font-body text-sm font-medium text-primary">
+                Join over <span className="font-bold">{waitlistCount.toLocaleString()}</span> others on the waitlist!
+              </p>
+            </div>
+          )}
 
           {/* Email Signup Form */}
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
@@ -74,14 +142,79 @@ const WishlistSection = () => {
               className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Adding...' : 'Count Me In!'}
+              {isSubmitting ? 'Adding...' : 'Get 3 Months FREE'}
             </Button>
           </form>
 
-          {/* Trust indicator */}
-          
+          {/* Creator CTA */}
+          <div className="pt-8 border-t border-border/30">
+            <p className="font-body text-sm text-foreground/60 mb-3">
+              Content creator? We have something special for you.
+            </p>
+            <Button 
+              variant="outline"
+              onClick={() => setShowCreatorModal(true)}
+              className="font-body text-sm px-6 py-2 border-primary/30 text-primary hover:bg-primary/10"
+            >
+              Learn about Theta Create
+            </Button>
+          </div>
         </div>
       </div>
-    </section>;
+
+      {/* Creator Modal */}
+      {showCreatorModal && (
+        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-card border border-border rounded-xl p-6 max-w-md w-full space-y-4">
+            <div className="space-y-2">
+              <h3 className="font-heading font-bold text-xl text-foreground">
+                Theta Create 🚀
+              </h3>
+              <p className="font-body text-sm text-foreground/70 leading-relaxed">
+                Turn your expertise into premium content. Create courses, workshops, and exclusive content that generates revenue while you sleep.
+              </p>
+            </div>
+            
+            <div className="space-y-3">
+              <Input
+                type="email"
+                placeholder="creator.email@example.com"
+                className="w-full h-12 px-4 font-body"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    const input = e.target as HTMLInputElement;
+                    if (input.value) {
+                      handleCreatorSubmit(input.value);
+                      input.value = '';
+                    }
+                  }
+                }}
+              />
+              <Button
+                onClick={(e) => {
+                  const input = (e.target as HTMLElement).parentElement?.querySelector('input') as HTMLInputElement;
+                  if (input?.value) {
+                    handleCreatorSubmit(input.value);
+                    input.value = '';
+                  }
+                }}
+                className="w-full bg-gradient-primary hover:shadow-glow"
+              >
+                Join Creator Waitlist
+              </Button>
+            </div>
+            
+            <Button 
+              variant="ghost" 
+              onClick={() => setShowCreatorModal(false)}
+              className="w-full text-sm"
+            >
+              Maybe later
+            </Button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
 };
 export default WishlistSection;
