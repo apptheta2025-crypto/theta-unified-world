@@ -65,13 +65,13 @@ const WishlistSection = () => {
               placeholder="your.email@example.com" 
               value={email} 
               onChange={e => setEmail(e.target.value)} 
-              className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary" 
+              className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary rounded-l-full" 
               required 
               disabled={isSubmitting}
             />
             <Button 
               type="submit" 
-              className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-full"
+              className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full"
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Adding...' : 'Count Me In!'}
