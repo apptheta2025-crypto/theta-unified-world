@@ -27,6 +27,16 @@ const handler = async (req: Request): Promise<Response> => {
 
     const isCreator = source === 'creator';
     
+    // Add contact to Resend audience
+    try {
+      await resend.contacts.create({
+        email: email,
+        audienceId: 'general', // You'll need to create this audience in Resend dashboard
+      });
+    } catch (audienceError) {
+      console.log('Contact might already exist in audience:', audienceError);
+    }
+
     const emailResponse = await resend.emails.send({
       from: "Theta Team <noreply@theta.co.in>",
       to: [email],
@@ -97,7 +107,8 @@ const handler = async (req: Request): Promise<Response> => {
               <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
                 <p style="color: #9ca3af; font-size: 12px; margin: 0;">
                   © 2025 Theta. All rights reserved.<br>
-                  <a href="https://theta.co.in" style="color: #6366f1; text-decoration: none;">theta.co.in</a>
+                  <a href="https://theta.co.in" style="color: #6366f1; text-decoration: none;">theta.co.in</a><br>
+                  <a href="https://theta.co.in/unsubscribe?email=${encodeURIComponent(email)}" style="color: #9ca3af; text-decoration: underline; font-size: 11px;">Unsubscribe from emails</a>
                 </p>
               </div>
             </div>
@@ -188,7 +199,8 @@ const handler = async (req: Request): Promise<Response> => {
               <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
                 <p style="color: #9ca3af; font-size: 12px; margin: 0;">
                   © 2025 Theta. All rights reserved.<br>
-                  <a href="https://theta.co.in" style="color: #6366f1; text-decoration: none;">theta.co.in</a>
+                  <a href="https://theta.co.in" style="color: #6366f1; text-decoration: none;">theta.co.in</a><br>
+                  <a href="https://theta.co.in/unsubscribe?email=${encodeURIComponent(email)}" style="color: #9ca3af; text-decoration: underline; font-size: 11px;">Unsubscribe from emails</a>
                 </p>
               </div>
             </div>
