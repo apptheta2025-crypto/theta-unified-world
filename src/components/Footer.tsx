@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Right side - Social Media Icons */}
           <div className="flex items-center space-x-4">
             <a 
-              href="https://instagram.com/app.theta_" 
+              href="https://www.instagram.com/theta.app_/" 
               className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-smooth group"
               aria-label="Follow us on Instagram"
             >
