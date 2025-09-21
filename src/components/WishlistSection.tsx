@@ -8,36 +8,37 @@ const WishlistSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCreatorModal, setShowCreatorModal] = useState(false);
   const [waitlistCount, setWaitlistCount] = useState(0);
-  
   useEffect(() => {
     // Fetch waitlist count
     const fetchCount = async () => {
       try {
-        const { count } = await supabase
-          .from('waitlist')
-          .select('*', { count: 'exact', head: true });
+        const {
+          count
+        } = await supabase.from('waitlist').select('*', {
+          count: 'exact',
+          head: true
+        });
         setWaitlistCount(count || 0);
       } catch (error) {
         console.error('Error fetching waitlist count:', error);
       }
     };
-    
     fetchCount();
   }, []);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || isSubmitting) return;
-
     setIsSubmitting(true);
-    
     try {
-      const { error } = await supabase
-        .from('waitlist')
-        .insert([{ email, source: 'wishlist' }]);
-
+      const {
+        error
+      } = await supabase.from('waitlist').insert([{
+        email,
+        source: 'wishlist'
+      }]);
       if (error) {
-        if (error.code === '23505') { // unique constraint violation
+        if (error.code === '23505') {
+          // unique constraint violation
           toast({
             title: "Already on the list!",
             description: "This email is already registered for our waitlist."
@@ -63,17 +64,17 @@ const WishlistSection = () => {
       setIsSubmitting(false);
     }
   };
-
   const handleCreatorSubmit = async (creatorEmail: string) => {
     try {
-      const { error } = await supabase
-        .from('waitlist')
-        .insert([{ email: creatorEmail, source: 'creator' }]);
-
+      const {
+        error
+      } = await supabase.from('waitlist').insert([{
+        email: creatorEmail,
+        source: 'creator'
+      }]);
       if (error && error.code !== '23505') {
         throw error;
       }
-      
       toast({
         title: "Creator interest noted! 🚀",
         description: "We'll reach out with exclusive creator beta access."
@@ -87,8 +88,7 @@ const WishlistSection = () => {
       });
     }
   };
-  return (
-    <section id="wishlist" className="py-16 lg:py-24 bg-gradient-subtle text-foreground">
+  return <section id="wishlist" className="py-16 lg:py-24 bg-gradient-subtle text-foreground">
       <div className="container-wide">
         <div className="text-center space-y-8 lg:space-y-10 max-w-3xl mx-auto">
           {/* Header */}
@@ -101,7 +101,7 @@ const WishlistSection = () => {
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 max-w-2xl mx-auto">
               <p className="font-body text-xl font-semibold text-primary mb-2">🎁 Early Bird Special</p>
               <p className="font-body text-lg text-foreground/90 leading-relaxed">
-                Join now for a chance to get <span className="font-bold text-gradient-primary">3 months of Theta Premium free</span> when we launch!
+                Join now for a chance to get <span className="font-bold text-gradient-primary">2 months of Theta Premium free</span> when we launch!
               </p>
             </div>
             
@@ -118,30 +118,16 @@ const WishlistSection = () => {
           </div>
 
           {/* Social Proof */}
-          {waitlistCount > 0 && (
-            <div className="bg-gradient-primary/5 border border-primary/20 rounded-lg p-4 max-w-sm mx-auto">
+          {waitlistCount > 0 && <div className="bg-gradient-primary/5 border border-primary/20 rounded-lg p-4 max-w-sm mx-auto">
               <p className="font-body text-sm font-medium text-primary">
                 Join over <span className="font-bold">{waitlistCount.toLocaleString()}</span> others on the waitlist!
               </p>
-            </div>
-          )}
+            </div>}
 
           {/* Email Signup Form */}
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-            <Input 
-              type="email" 
-              placeholder="your.email@example.com" 
-              value={email} 
-              onChange={e => setEmail(e.target.value)} 
-              className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary rounded-l-full" 
-              required 
-              disabled={isSubmitting}
-            />
-            <Button 
-              type="submit" 
-              className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full"
-              disabled={isSubmitting}
-            >
+            <Input type="email" placeholder="your.email@example.com" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary rounded-l-full" required disabled={isSubmitting} />
+            <Button type="submit" className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full" disabled={isSubmitting}>
               {isSubmitting ? 'Adding...' : 'Get 3 Months FREE'}
             </Button>
           </form>
@@ -151,11 +137,7 @@ const WishlistSection = () => {
             <p className="font-body text-sm text-foreground/60 mb-3">
               Content creator? We have something special for you.
             </p>
-            <Button 
-              variant="outline"
-              onClick={() => setShowCreatorModal(true)}
-              className="font-body text-sm px-6 py-2 border-primary/30 text-primary hover:bg-primary/10"
-            >
+            <Button variant="outline" onClick={() => setShowCreatorModal(true)} className="font-body text-sm px-6 py-2 border-primary/30 text-primary hover:bg-primary/10">
               Learn about Theta Create
             </Button>
           </div>
@@ -163,8 +145,7 @@ const WishlistSection = () => {
       </div>
 
       {/* Creator Modal */}
-      {showCreatorModal && (
-        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      {showCreatorModal && <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-card border border-border rounded-xl p-6 max-w-md w-full space-y-4">
             <div className="space-y-2">
               <h3 className="font-heading font-bold text-xl text-foreground">
@@ -176,45 +157,31 @@ const WishlistSection = () => {
             </div>
             
             <div className="space-y-3">
-              <Input
-                type="email"
-                placeholder="creator.email@example.com"
-                className="w-full h-12 px-4 font-body"
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    const input = e.target as HTMLInputElement;
-                    if (input.value) {
-                      handleCreatorSubmit(input.value);
-                      input.value = '';
-                    }
-                  }
-                }}
-              />
-              <Button
-                onClick={(e) => {
-                  const input = (e.target as HTMLElement).parentElement?.querySelector('input') as HTMLInputElement;
-                  if (input?.value) {
-                    handleCreatorSubmit(input.value);
-                    input.value = '';
-                  }
-                }}
-                className="w-full bg-gradient-primary hover:shadow-glow"
-              >
+              <Input type="email" placeholder="creator.email@example.com" className="w-full h-12 px-4 font-body" onKeyDown={e => {
+            if (e.key === 'Enter') {
+              const input = e.target as HTMLInputElement;
+              if (input.value) {
+                handleCreatorSubmit(input.value);
+                input.value = '';
+              }
+            }
+          }} />
+              <Button onClick={e => {
+            const input = (e.target as HTMLElement).parentElement?.querySelector('input') as HTMLInputElement;
+            if (input?.value) {
+              handleCreatorSubmit(input.value);
+              input.value = '';
+            }
+          }} className="w-full bg-gradient-primary hover:shadow-glow">
                 Join Creator Waitlist
               </Button>
             </div>
             
-            <Button 
-              variant="ghost" 
-              onClick={() => setShowCreatorModal(false)}
-              className="w-full text-sm"
-            >
+            <Button variant="ghost" onClick={() => setShowCreatorModal(false)} className="w-full text-sm">
               Maybe later
             </Button>
           </div>
-        </div>
-      )}
-    </section>
-  );
+        </div>}
+    </section>;
 };
 export default WishlistSection;
