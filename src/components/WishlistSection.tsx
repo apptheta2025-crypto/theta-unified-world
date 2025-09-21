@@ -10,7 +10,7 @@ const WishlistSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCreatorModal, setShowCreatorModal] = useState(false);
   const [waitlistCount, setWaitlistCount] = useState(0);
-  const [agreeToUpdates, setAgreeToUpdates] = useState(false);
+  const [agreeToUpdates, setAgreeToUpdates] = useState(true);
   useEffect(() => {
     // Fetch waitlist count
     const fetchCount = async () => {
