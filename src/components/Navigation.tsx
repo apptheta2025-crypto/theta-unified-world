@@ -49,7 +49,7 @@ const Navigation = () => {
             </a>
             <button onClick={scrollToTop} className="relative font-body font-medium text-foreground/80 hover:text-foreground transition-smooth group">
               Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-nav-home transition-all group-hover:w-full"></span>
             </button>
           </div>
 
