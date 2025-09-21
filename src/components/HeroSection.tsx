@@ -7,20 +7,20 @@ import appMockup from '@/assets/theta-app-mockup.jpg';
 const HeroSection = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || isSubmitting) return;
-
     setIsSubmitting(true);
-    
     try {
-      const { error } = await supabase
-        .from('waitlist')
-        .insert([{ email, source: 'hero' }]);
-
+      const {
+        error
+      } = await supabase.from('waitlist').insert([{
+        email,
+        source: 'hero'
+      }]);
       if (error) {
-        if (error.code === '23505') { // unique constraint violation
+        if (error.code === '23505') {
+          // unique constraint violation
           toast({
             title: "Already on the list!",
             description: "This email is already registered for our waitlist."
@@ -63,24 +63,7 @@ const HeroSection = () => {
             </div>
 
             {/* Email Signup Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md rounded-lg">
-              <Input 
-                type="email" 
-                placeholder="Enter your email" 
-                value={email} 
-                onChange={e => setEmail(e.target.value)} 
-                className="flex-1 h-12 px-4 font-body border-border focus-visible:ring-primary" 
-                required 
-                disabled={isSubmitting}
-              />
-              <Button 
-                type="submit" 
-                className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-6 h-12 transition-spring rounded-md"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Joining...' : 'Join the waitlist'}
-              </Button>
-            </form>
+            
           </div>
 
           {/* App Mockup */}
