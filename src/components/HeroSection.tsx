@@ -44,7 +44,7 @@ const HeroSection = () => {
       setIsSubmitting(false);
     }
   };
-  return <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-hero overflow-hidden">
+  return <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-hero-to-problem overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 bg-gradient-mesh opacity-80" />
       

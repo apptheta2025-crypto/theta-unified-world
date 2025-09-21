@@ -21,7 +21,7 @@ const features = [{
   description: 'Create playlists, bookmark pages, highlight text, and generate instant AI summaries of books.'
 }];
 const AppSection = () => {
-  return <section id="app" className="relative py-16 lg:py-24 bg-gradient-to-br from-background via-primary/5 to-accent/10 overflow-hidden">
+  return <section id="app" className="relative py-16 lg:py-24 bg-gradient-app-to-create overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-subtle opacity-60" />
       

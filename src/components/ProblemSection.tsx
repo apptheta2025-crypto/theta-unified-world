@@ -1,6 +1,6 @@
 import { Puzzle } from 'lucide-react';
 const ProblemSection = () => {
-  return <section className="relative py-16 lg:py-24 overflow-hidden">
+  return <section className="relative py-16 lg:py-24 bg-gradient-problem-to-benefits overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-primary rounded-full blur-3xl animate-blob"></div>

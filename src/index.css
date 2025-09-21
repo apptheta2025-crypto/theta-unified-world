@@ -68,6 +68,14 @@ All colors MUST be HSL.
                      radial-gradient(circle at 40% 40%, hsl(286 73% 68% / 0.1) 0%, transparent 50%);
     --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(0 0% 8%) 50%, hsl(var(--background)) 100%);
     
+    /* Seamless Section Transitions */
+    --gradient-hero-to-problem: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(0 0% 8%) 70%, hsl(var(--background)) 100%);
+    --gradient-problem-to-benefits: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--primary) / 0.05) 30%, hsl(0 0% 12%) 100%);
+    --gradient-benefits-to-app: linear-gradient(180deg, hsl(0 0% 12%) 0%, hsl(var(--primary) / 0.03) 50%, hsl(var(--accent) / 0.05) 100%);
+    --gradient-app-to-create: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(0 0% 8%) 30%, hsl(0 0% 5%) 100%);
+    --gradient-create-to-flywheel: linear-gradient(180deg, hsl(0 0% 5%) 0%, hsl(0 0% 8%) 70%, hsl(0 0% 12%) 100%);
+    --gradient-flywheel-to-wishlist: linear-gradient(180deg, hsl(0 0% 12%) 0%, hsl(0 0% 12%) 100%);
+    
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.2);
     --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.3);
     --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4);
@@ -185,6 +193,31 @@ All colors MUST be HSL.
   
   .bg-gradient-hero {
     background: var(--gradient-hero);
+  }
+  
+  /* Seamless Section Backgrounds */
+  .bg-gradient-hero-to-problem {
+    background: var(--gradient-hero-to-problem);
+  }
+  
+  .bg-gradient-problem-to-benefits {
+    background: var(--gradient-problem-to-benefits);
+  }
+  
+  .bg-gradient-benefits-to-app {
+    background: var(--gradient-benefits-to-app);
+  }
+  
+  .bg-gradient-app-to-create {
+    background: var(--gradient-app-to-create);
+  }
+  
+  .bg-gradient-create-to-flywheel {
+    background: var(--gradient-create-to-flywheel);
+  }
+  
+  .bg-gradient-flywheel-to-wishlist {
+    background: var(--gradient-flywheel-to-wishlist);
   }
   
   .text-glow {

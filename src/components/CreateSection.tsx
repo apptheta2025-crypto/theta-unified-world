@@ -17,7 +17,7 @@ const features = [{
   description: 'Track reads, listens, completion rates, and audience demographics to understand your impact and grow your audience.'
 }];
 const CreateSection = () => {
-  return <section id="creators" className="relative py-16 lg:py-24 bg-gradient-dark text-white overflow-hidden">
+  return <section id="creators" className="relative py-16 lg:py-24 bg-gradient-create-to-flywheel text-white overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 bg-gradient-mesh-dark opacity-70" />
       

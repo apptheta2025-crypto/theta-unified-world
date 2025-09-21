@@ -25,7 +25,7 @@ const steps = [
 
 const FlywheelSection = () => {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-subtle">
+    <section className="py-16 lg:py-24 bg-gradient-flywheel-to-wishlist">
       <div className="container-wide">
         <div className="text-center space-y-12 lg:space-y-16">
           {/* Header */}

@@ -25,7 +25,7 @@ const BenefitsSection = () => {
     title: "Global Content Access",
     description: "Explore content from creators worldwide. Multi-language support and cultural diversity at your fingertips."
   }];
-  return <section className="py-16 lg:py-24 bg-gradient-subtle">
+  return <section className="py-16 lg:py-24 bg-gradient-benefits-to-app">
       <div className="container-wide">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-6">
