@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Left side - Logo and Copyright */}
           <div className="flex items-center space-x-3">
             <img src={thetaLogo} alt="Theta" className="h-8 w-8" />
-            <span className="font-heading font-bold text-xl">Theta</span>
+            <span className="font-heading font-bold text-xl text-white">Theta</span>
             <span className="hidden sm:inline font-body text-sm text-background/70">
               © 2025 Theta. All rights reserved.
             </span>
@@ -22,21 +22,21 @@ const Footer = () => {
               className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-smooth group"
               aria-label="Follow us on Twitter"
             >
-              <Twitter className="w-5 h-5 text-background/70 group-hover:text-background" />
+              <Twitter className="w-5 h-5 text-white group-hover:text-white" />
             </a>
             <a 
               href="#" 
               className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-smooth group"
               aria-label="Follow us on Instagram"
             >
-              <Instagram className="w-5 h-5 text-background/70 group-hover:text-background" />
+              <Instagram className="w-5 h-5 text-white group-hover:text-white" />
             </a>
             <a 
               href="#" 
               className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-smooth group"
               aria-label="Connect with us on LinkedIn"
             >
-              <Linkedin className="w-5 h-5 text-background/70 group-hover:text-background" />
+              <Linkedin className="w-5 h-5 text-white group-hover:text-white" />
             </a>
           </div>
         </div>
