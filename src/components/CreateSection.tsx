@@ -1,5 +1,5 @@
 import { PenTool, Mic, Upload, BarChart } from 'lucide-react';
-import createMockup from '@/assets/theta-create-mockup.jpg';
+import createMockup from '@/assets/theta-create-app-mockup.png';
 
 const features = [
   {
@@ -34,7 +34,7 @@ const CreateSection = () => {
             <div className="relative">
               <img 
                 src={createMockup} 
-                alt="Theta Create Dashboard" 
+                alt="Theta Create App Interface" 
                 className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto rounded-xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-accent-create/20 to-transparent rounded-xl blur-2xl -z-10" />
