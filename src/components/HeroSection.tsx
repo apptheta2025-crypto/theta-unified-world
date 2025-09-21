@@ -82,24 +82,18 @@ const HeroSection = () => {
                   Theta revolutionizes how you consume digital content by breaking down barriers between different media types.
                 </p>
                 
-                <p className="font-body text-base text-foreground/70 leading-relaxed">
-                  Join thousands of readers, listeners, and creators who are already experiencing the future of content consumption. 
-                  Whether you're commuting, exercising, or relaxing at home, Theta adapts to your lifestyle with intelligent 
-                  format switching and personalized recommendations powered by advanced AI technology.
-                </p>
+                
               </div>
             </div>
 
             {/* Join Waitlist Button */}
             <div className="flex justify-center">
-              <Button 
-                onClick={() => {
-                  const waitlistSection = document.getElementById('wishlist');
-                  waitlistSection?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                size="lg"
-                className="bg-gradient-cta hover:shadow-glow transition-all duration-300 font-bold px-12 py-4 text-lg shadow-2xl hover:scale-105 relative overflow-hidden group rounded-full"
-              >
+              <Button onClick={() => {
+              const waitlistSection = document.getElementById('wishlist');
+              waitlistSection?.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }} size="lg" className="bg-gradient-cta hover:shadow-glow transition-all duration-300 font-bold px-12 py-4 text-lg shadow-2xl hover:scale-105 relative overflow-hidden group rounded-full">
                 <span className="relative z-10 flex items-center gap-2">
                   🚀 Join Waitlist
                 </span>
