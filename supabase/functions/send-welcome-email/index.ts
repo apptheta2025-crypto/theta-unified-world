@@ -28,7 +28,7 @@ const handler = async (req: Request): Promise<Response> => {
     const isCreator = source === 'creator';
     
     const emailResponse = await resend.emails.send({
-      from: "Theta Team <onboarding@resend.dev>",
+      from: "Theta Team <hello@theta.co.in>",
       to: [email],
       subject: isCreator ? "Welcome to Theta Create - Turn Your Expertise Into Revenue!" : "You're in! Welcome to the future of reading and listening.",
       html: isCreator ? `
