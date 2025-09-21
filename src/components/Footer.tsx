@@ -18,14 +18,14 @@ const Footer = () => {
           {/* Right side - Social Media Icons */}
           <div className="flex items-center space-x-4">
             <a 
-              href="#" 
+              href="https://instagram.com/app.theta_" 
               className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-smooth group"
               aria-label="Follow us on Instagram"
             >
               <Instagram className="w-5 h-5 text-white group-hover:text-white" />
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/company/apptheta/" 
               className="w-10 h-10 bg-background/10 hover:bg-background/20 rounded-full flex items-center justify-center transition-smooth group"
               aria-label="Connect with us on LinkedIn"
             >
