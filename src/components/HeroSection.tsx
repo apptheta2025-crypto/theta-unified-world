@@ -71,7 +71,7 @@ const HeroSection = () => {
                 for Content
               </h1>
               
-              <p className="font-body text-lg sm:text-xl text-foreground/70 leading-relaxed max-w-xl text-center">
+              <p className="font-body text-lg sm:text-xl text-foreground/70 leading-relaxed text-center mx-auto">
                 📚 Ebooks • 🎧 Audiobooks • 🎙️ Podcasts
                 <br />
                 <span className="text-foreground/90 font-semibold">All in one beautiful, unified experience.</span>
