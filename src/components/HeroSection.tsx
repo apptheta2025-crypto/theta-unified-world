@@ -79,6 +79,28 @@ const HeroSection = () => {
             </div>
 
             {/* Email Signup Form */}
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 bg-background/10 border-border/20 text-foreground placeholder:text-foreground/50 backdrop-blur-sm"
+                  required
+                />
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="bg-gradient-primary hover:shadow-glow transition-all duration-300 font-semibold px-8 py-3"
+                >
+                  {isSubmitting ? 'Joining...' : 'Join Waitlist'}
+                </Button>
+              </div>
+              <p className="text-sm text-foreground/60 text-center">
+                Be the first to experience the future of content consumption
+              </p>
+            </form>
             
           </div>
         </div>
