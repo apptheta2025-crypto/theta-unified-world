@@ -56,7 +56,7 @@ const FlywheelSection = () => {
                       <h3 className="font-heading font-bold text-xl text-foreground">
                         {step.title}
                       </h3>
-                      <p className="font-body text-sm text-foreground/70 leading-relaxed">
+                      <p className="font-body text-xs text-foreground/70 leading-snug">
                         {step.description}
                       </p>
                     </div>
