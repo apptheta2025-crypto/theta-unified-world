@@ -60,6 +60,7 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)), hsl(286 73% 78%));
     --gradient-create: linear-gradient(135deg, hsl(var(--accent-create)), hsl(var(--accent-create-glow)));
     --gradient-nav-home: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent-create)));
+    --gradient-cta: linear-gradient(135deg, #bc46ea, #f3ae1a);
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(0 0% 12%));
     --gradient-dark: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 5%));
     --gradient-mesh: radial-gradient(circle at 20% 20%, hsl(var(--primary) / 0.3) 0%, transparent 50%), 
@@ -148,6 +149,10 @@ All colors MUST be HSL.
   
   .bg-gradient-nav-home {
     background: var(--gradient-nav-home);
+  }
+  
+  .bg-gradient-cta {
+    background: var(--gradient-cta);
   }
   
   .text-gradient-create {
