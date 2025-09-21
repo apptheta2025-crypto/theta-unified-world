@@ -35,21 +35,54 @@ const ProblemSection = () => {
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full animate-pulse-slow"></div>
             </div>
             
-            <div className="space-y-6">
-              <h3 className="font-heading font-semibold text-2xl sm:text-3xl text-foreground/90 animate-fade-in">
-                🎯 End Content Fragmentation.
+            <div className="space-y-6 text-left max-w-4xl mx-auto">
+              <h3 className="font-heading font-semibold text-2xl sm:text-3xl text-foreground/90 text-center">
+                🎯 End Content Fragmentation with Theta's Unified Platform
               </h3>
               
-              <div className="relative max-w-3xl mx-auto">
-                <p className="font-body text-xl text-foreground/70 leading-relaxed">
-                  Readers and listeners today are <span className="text-foreground font-semibold">forced to juggle</span> separate apps for ebooks, audiobooks, and podcasts. 
-                  <br /><br />
-                  <span className="text-gradient-primary font-semibold">Theta's mission:</span> Unite all your favorite content in one beautiful, intelligent ecosystem.
-                </p>
-                
-                {/* Decorative Quote Marks */}
-                <div className="absolute -top-4 -left-4 text-6xl text-primary/20 font-heading">"</div>
-                <div className="absolute -bottom-8 -right-4 text-6xl text-primary/20 font-heading rotate-180">"</div>
+              <p className="font-body text-lg text-foreground/80 leading-relaxed">
+                Today's content consumers face a frustrating reality: juggling separate apps for ebooks, different platforms for audiobooks, 
+                and yet another service for podcasts. This fragmentation creates friction in your content consumption, 
+                making it harder to maintain reading habits and discover new content across formats.
+              </p>
+              
+              <p className="font-body text-base text-foreground/75 leading-relaxed">
+                <strong>Theta's mission</strong> is to unify your entire content universe into one seamless, beautiful experience. 
+                We believe that the future of digital content lies in breaking down the artificial barriers between 
+                ebooks, audiobooks, and podcasts - creating a truly unified platform where content flows naturally 
+                between formats based on your context and preferences.
+              </p>
+              
+              <p className="font-body text-base text-foreground/70 leading-relaxed">
+                Imagine starting an ebook during your morning commute, seamlessly switching to the audiobook version 
+                while driving, and discovering related podcast episodes during your lunch break - all within the same platform, 
+                with perfect synchronization and intelligent recommendations. This is the Theta vision: 
+                <em>unified, intelligent, and effortless content consumption</em>.
+              </p>
+              
+              <div className="flex justify-center pt-4">
+                <div className="text-sm text-foreground/60 space-y-1 text-center">
+                  <p>Learn more about digital content platforms:</p>
+                  <div className="space-x-3">
+                    <a 
+                      href="https://www.goodreads.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-glow transition-colors underline"
+                    >
+                      Goodreads Reading Community
+                    </a>
+                    <span>•</span>
+                    <a 
+                      href="https://www.audible.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-glow transition-colors underline"
+                    >
+                      Audible Audiobooks
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

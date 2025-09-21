@@ -64,18 +64,30 @@ const HeroSection = () => {
           <div className="space-y-8 lg:space-y-10">
             <div className="space-y-6">
               <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
-                Unified Platform for
+                Theta: Unified Platform for
                 <br />
                 <span className="text-gradient-primary text-glow animate-pulse-slow">Ebooks, Audiobooks</span>
                 <br />
                 & Podcasts
               </h1>
               
-              <p className="font-body text-lg sm:text-xl text-foreground/70 leading-relaxed text-center mx-auto">
-                📚 Ebooks • 🎧 Audiobooks • 🎙️ Podcasts
-                <br />
-                <span className="text-foreground/90 font-semibold">All in one beautiful, unified experience.</span>
-              </p>
+              <div className="space-y-4 max-w-3xl mx-auto">
+                <p className="font-body text-lg sm:text-xl text-foreground/90 leading-relaxed">
+                  📚 Ebooks • 🎧 Audiobooks • 🎙️ Podcasts - All unified in one beautiful platform
+                </p>
+                
+                <p className="font-body text-base sm:text-lg text-foreground/75 leading-relaxed">
+                  Experience seamless switching between reading and listening with our AI-powered content discovery. 
+                  Import your local files, discover new content, and enjoy synchronized progress across all formats. 
+                  Theta revolutionizes how you consume digital content by breaking down barriers between different media types.
+                </p>
+                
+                <p className="font-body text-base text-foreground/70 leading-relaxed">
+                  Join thousands of readers, listeners, and creators who are already experiencing the future of content consumption. 
+                  Whether you're commuting, exercising, or relaxing at home, Theta adapts to your lifestyle with intelligent 
+                  format switching and personalized recommendations powered by advanced AI technology.
+                </p>
+              </div>
             </div>
 
             {/* Join Waitlist Button */}
