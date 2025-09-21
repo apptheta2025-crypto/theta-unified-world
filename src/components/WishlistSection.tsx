@@ -18,7 +18,7 @@ const WishlistSection = () => {
   };
 
   return (
-    <section id="wishlist" className="py-16 lg:py-24 bg-gradient-dark text-white">
+    <section id="wishlist" className="py-16 lg:py-24 bg-gradient-subtle text-foreground">
       <div className="container-wide">
         <div className="text-center space-y-8 lg:space-y-10 max-w-3xl mx-auto">
           {/* Header */}
@@ -26,7 +26,7 @@ const WishlistSection = () => {
             <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl">
               Be the First to Experience <span className="text-gradient-primary">Theta</span>
             </h2>
-            <p className="font-body text-lg text-white/70 leading-relaxed">
+            <p className="font-body text-lg text-foreground/70 leading-relaxed">
               Join our wishlist to get early access, exclusive updates, and be notified 
               the moment we launch.
             </p>
@@ -39,7 +39,7 @@ const WishlistSection = () => {
               placeholder="your.email@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 h-14 px-4 font-body bg-white/10 border-white/20 text-white placeholder:text-white/60 focus-visible:ring-primary focus-visible:border-primary"
+              className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary"
               required
             />
             <Button 
@@ -51,7 +51,7 @@ const WishlistSection = () => {
           </form>
 
           {/* Trust indicator */}
-          <p className="font-body text-sm text-white/50">
+          <p className="font-body text-sm text-foreground/50">
             Join 10,000+ readers and creators already on the wishlist
           </p>
         </div>

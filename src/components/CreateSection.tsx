@@ -37,7 +37,7 @@ const CreateSection = () => {
                 alt="Theta Create Dashboard" 
                 className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto rounded-xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-xl blur-2xl -z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-accent-create/20 to-transparent rounded-xl blur-2xl -z-10" />
             </div>
           </div>
 
@@ -47,7 +47,7 @@ const CreateSection = () => {
               <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl">
                 Theta Create
               </h2>
-              <p className="font-heading font-semibold text-xl sm:text-2xl text-gradient-primary">
+              <p className="font-heading font-semibold text-xl sm:text-2xl text-gradient-create">
                 Read. Listen. Create.
               </p>
             </div>
@@ -56,8 +56,8 @@ const CreateSection = () => {
               {features.map((feature, index) => (
                 <div key={index} className="flex gap-4 group">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:shadow-glow transition-spring">
-                      <feature.icon className="w-6 h-6 text-primary-foreground" />
+                    <div className="w-12 h-12 bg-gradient-create rounded-xl flex items-center justify-center group-hover:shadow-glow-create transition-spring">
+                      <feature.icon className="w-6 h-6 text-accent-create-foreground" />
                     </div>
                   </div>
                   <div className="space-y-2">

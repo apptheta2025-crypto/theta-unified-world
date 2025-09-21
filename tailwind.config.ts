@@ -28,6 +28,11 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
           glow: "hsl(var(--primary-glow))",
         },
+        "accent-create": {
+          DEFAULT: "hsl(var(--accent-create))",
+          foreground: "hsl(var(--accent-create-foreground))",
+          glow: "hsl(var(--accent-create-glow))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",

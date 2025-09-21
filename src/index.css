@@ -8,82 +8,21 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 9.8%; /* #191919 */
+    /* Core Brand Colors - Dark Theme Default */
+    --background: 0 0% 9.8%; /* #191919 */
+    --foreground: 0 0% 100%;
     
     /* Theta Purple Brand */
     --primary: 286 73% 58%; /* #bc46ea */
     --primary-foreground: 0 0% 100%;
     --primary-glow: 286 73% 68%;
     
+    /* Theta Create Yellow Brand */
+    --accent-create: 44 95% 51%; /* #f3ae1a */
+    --accent-create-foreground: 0 0% 9.8%;
+    --accent-create-glow: 44 95% 61%;
+    
     /* Neutral Palette */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 9.8%;
-    
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 9.8%;
-    
-    /* Interactive States */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 286 73% 58%;
-    
-    /* Cards & Surfaces */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 9.8%;
-    
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9.8%;
-    
-    /* Design System Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-dark: linear-gradient(135deg, hsl(var(--foreground)), hsl(0 0% 15%));
-    
-    --shadow-sm: 0 1px 2px 0 hsl(var(--foreground) / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(var(--foreground) / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(var(--foreground) / 0.1);
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
-    
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 0 0% 9.8%; /* #191919 */
-    --foreground: 0 0% 100%;
-    
-    --card: 0 0% 9.8%;
-    --card-foreground: 0 0% 100%;
-    
-    --popover: 0 0% 9.8%;
-    --popover-foreground: 0 0% 100%;
-    
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
     
@@ -93,11 +32,63 @@ All colors MUST be HSL.
     --accent: 0 0% 15%;
     --accent-foreground: 0 0% 100%;
     
+    /* Interactive States */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
     --border: 0 0% 20%;
     --input: 0 0% 20%;
+    --ring: 286 73% 58%;
     
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(0 0% 15%));
+    /* Cards & Surfaces */
+    --card: 0 0% 9.8%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 0 0% 9.8%;
+    --popover-foreground: 0 0% 100%;
+    
+    /* Design System Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-create: linear-gradient(135deg, hsl(var(--accent-create)), hsl(var(--accent-create-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(0 0% 12%));
     --gradient-dark: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 5%));
+    
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+    --shadow-glow-create: 0 0 40px hsl(var(--accent-create) / 0.4);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9.8%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9.8%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9.8%;
+    
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9.8%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9.8%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --shadow-sm: 0 1px 2px 0 hsl(var(--foreground) / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(var(--foreground) / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(var(--foreground) / 0.1);
   }
 }
 
@@ -136,8 +127,20 @@ All colors MUST be HSL.
     background: var(--gradient-dark);
   }
   
+  .bg-gradient-create {
+    background: var(--gradient-create);
+  }
+  
+  .text-gradient-create {
+    @apply bg-gradient-to-r from-accent-create to-accent-create-glow bg-clip-text text-transparent;
+  }
+  
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-glow-create {
+    box-shadow: var(--shadow-glow-create);
   }
   
   .transition-smooth {

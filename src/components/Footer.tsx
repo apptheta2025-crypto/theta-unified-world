@@ -3,12 +3,12 @@ import thetaLogo from '@/assets/theta-logo.png';
 
 const Footer = () => {
   return (
-    <footer className="py-12 bg-foreground text-background">
+    <footer className="py-12 bg-gradient-dark text-background">
       <div className="container-wide">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Left side - Logo and Copyright */}
           <div className="flex items-center space-x-3">
-            <img src={thetaLogo} alt="Theta" className="h-8 w-8 brightness-0 invert" />
+            <img src={thetaLogo} alt="Theta" className="h-8 w-8" />
             <span className="font-heading font-bold text-xl">Theta</span>
             <span className="hidden sm:inline font-body text-sm text-background/70">
               © 2025 Theta. All rights reserved.
