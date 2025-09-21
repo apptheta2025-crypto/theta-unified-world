@@ -3,23 +3,19 @@ import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 import appMockup from '@/assets/theta-app-mockup.jpg';
-
 const HeroSection = () => {
   const [email, setEmail] = useState('');
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
       toast({
         title: "Welcome to the Theta Universe!",
-        description: "You've been added to our wishlist. We'll notify you when we launch.",
+        description: "You've been added to our wishlist. We'll notify you when we launch."
       });
       setEmail('');
     }
   };
-
-  return (
-    <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-subtle">
+  return <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-subtle">
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
@@ -38,18 +34,8 @@ const HeroSection = () => {
 
             {/* Email Signup Form */}
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 h-12 px-4 font-body border-border focus-visible:ring-primary"
-                required
-              />
-              <Button 
-                type="submit"
-                className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-6 h-12 transition-spring"
-              >
+              <Input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-12 px-4 font-body border-border focus-visible:ring-primary" required />
+              <Button type="submit" className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-6 h-12 transition-spring rounded-md">
                 Join the Wishlist
               </Button>
             </form>
@@ -58,19 +44,13 @@ const HeroSection = () => {
           {/* App Mockup */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <img 
-                src={appMockup} 
-                alt="Theta App Interface" 
-                className="w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto"
-              />
+              <img src={appMockup} alt="Theta App Interface" className="w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto" />
               {/* Subtle glow effect */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-3xl blur-3xl -z-10" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
