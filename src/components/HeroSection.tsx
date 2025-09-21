@@ -85,9 +85,13 @@ const HeroSection = () => {
                   const waitlistSection = document.getElementById('wishlist');
                   waitlistSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="bg-gradient-primary hover:shadow-glow transition-all duration-300 font-semibold px-8 py-3"
+                size="lg"
+                className="bg-gradient-primary hover:shadow-glow transition-all duration-300 font-bold px-12 py-4 text-lg shadow-2xl hover:scale-105 animate-pulse-slow border-2 border-primary/20 hover:border-primary/40 relative overflow-hidden group"
               >
-                Join Waitlist
+                <span className="relative z-10 flex items-center gap-2">
+                  🚀 Join Waitlist
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></div>
               </Button>
             </div>
             <p className="text-sm text-foreground/60 text-center">
