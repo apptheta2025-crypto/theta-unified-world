@@ -44,7 +44,7 @@ const HeroSection = () => {
           {/* App Mockup */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <img src={appMockup} alt="Theta App Interface" className="w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto" />
+              
               {/* Subtle glow effect */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-3xl blur-3xl -z-10" />
             </div>
