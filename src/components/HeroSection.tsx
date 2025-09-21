@@ -55,11 +55,10 @@ const HeroSection = () => {
       <div className="absolute bottom-20 left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
       
       {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 opacity-5" 
-           style={{
-             backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-             backgroundSize: '50px 50px'
-           }} />
+      <div className="absolute inset-0 opacity-5" style={{
+      backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
+      backgroundSize: '50px 50px'
+    }} />
 
       <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -82,33 +81,13 @@ const HeroSection = () => {
             </div>
 
             {/* Email Signup Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md">
-              <Input
-                type="email"
-                placeholder="Enter your email..."
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-background/50 backdrop-blur-sm border-border/50 focus:border-primary transition-all"
-                disabled={isSubmitting}
-              />
-              <Button 
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-8 py-3 hover-glow whitespace-nowrap"
-              >
-                {isSubmitting ? 'Joining...' : 'Join Waitlist ✨'}
-              </Button>
-            </form>
+            
           </div>
 
           {/* App Mockup */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative group">
-              <img 
-                src={appMockup} 
-                alt="Theta App Mockup" 
-                className="max-w-full h-auto rounded-3xl shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:shadow-glow"
-              />
+              <img src={appMockup} alt="Theta App Mockup" className="max-w-full h-auto rounded-3xl shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:shadow-glow" />
               
               {/* Enhanced glow effects */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent-create/10 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
