@@ -1,5 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 import { useState, useEffect } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
@@ -8,6 +10,7 @@ const WishlistSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCreatorModal, setShowCreatorModal] = useState(false);
   const [waitlistCount, setWaitlistCount] = useState(0);
+  const [agreeToUpdates, setAgreeToUpdates] = useState(false);
   useEffect(() => {
     // Fetch waitlist count
     const fetchCount = async () => {
@@ -27,7 +30,7 @@ const WishlistSection = () => {
   }, []);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || isSubmitting) return;
+    if (!email || isSubmitting || !agreeToUpdates) return;
     setIsSubmitting(true);
     try {
       const {
@@ -62,6 +65,7 @@ const WishlistSection = () => {
         }
         
         setEmail('');
+        setAgreeToUpdates(false);
         setWaitlistCount(prev => prev + 1);
       }
     } catch (error) {
@@ -145,11 +149,29 @@ const WishlistSection = () => {
             </div>}
 
           {/* Email Signup Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-            <Input type="email" placeholder="your.email@example.com" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary rounded-l-full" required disabled={isSubmitting} />
-            <Button type="submit" className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full" disabled={isSubmitting}>
-              {isSubmitting ? 'Adding...' : 'Get 2 Months FREE'}
-            </Button>
+          <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Input type="email" placeholder="your.email@example.com" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary rounded-l-full" required disabled={isSubmitting} />
+              <Button type="submit" className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full" disabled={isSubmitting || !agreeToUpdates}>
+                {isSubmitting ? 'Adding...' : 'Get 2 Months FREE'}
+              </Button>
+            </div>
+            
+            {/* Agreement Checkbox */}
+            <div className="flex items-center space-x-2 justify-center">
+              <Checkbox 
+                id="agree-updates" 
+                checked={agreeToUpdates} 
+                onCheckedChange={(checked) => setAgreeToUpdates(!!checked)}
+                disabled={isSubmitting}
+              />
+              <Label 
+                htmlFor="agree-updates" 
+                className="text-sm text-foreground/70 cursor-pointer"
+              >
+                I agree to receive email updates about Theta's launch and features
+              </Label>
+            </div>
           </form>
 
           {/* Creator CTA */}
