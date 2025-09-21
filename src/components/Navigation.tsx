@@ -41,8 +41,8 @@ const Navigation = () => {
             <a href="#creators" className="font-body font-medium text-foreground/80 hover:text-foreground transition-smooth">
               For Creators
             </a>
-            <a href="#pricing" className="font-body font-medium text-foreground/80 hover:text-foreground transition-smooth">
-              Pricing
+            <a href="#home" className="font-body font-medium text-foreground/80 hover:text-foreground transition-smooth">
+              Home
             </a>
           </div>
 
