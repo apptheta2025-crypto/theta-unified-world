@@ -64,11 +64,11 @@ const HeroSection = () => {
           <div className="space-y-8 lg:space-y-10">
             <div className="space-y-6">
               <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
-                The Unified
+                Unified Platform for
                 <br />
-                <span className="text-gradient-primary text-glow animate-pulse-slow">Universe</span>
+                <span className="text-gradient-primary text-glow animate-pulse-slow">Ebooks, Audiobooks</span>
                 <br />
-                for Content
+                & Podcasts
               </h1>
               
               <p className="font-body text-lg sm:text-xl text-foreground/70 leading-relaxed text-center mx-auto">

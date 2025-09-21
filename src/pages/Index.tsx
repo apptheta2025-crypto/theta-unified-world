@@ -6,21 +6,27 @@ import CreateSection from '@/components/CreateSection';
 import FlywheelSection from '@/components/FlywheelSection';
 import WishlistSection from '@/components/WishlistSection';
 import Footer from '@/components/Footer';
+import StructuredData from '@/components/StructuredData';
+import SitemapGenerator from '@/components/SitemapGenerator';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main>
-        <HeroSection />
-        <ProblemSection />
-        <AppSection />
-        <CreateSection />
-        <FlywheelSection />
-        <WishlistSection />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <StructuredData />
+      <SitemapGenerator />
+      <div className="min-h-screen">
+        <Navigation />
+        <main>
+          <HeroSection />
+          <ProblemSection />
+          <AppSection />
+          <CreateSection />
+          <FlywheelSection />
+          <WishlistSection />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

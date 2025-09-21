@@ -41,7 +41,7 @@ const CreateSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 space-y-6">
             <h2 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-white">
-              Theta Create
+              Content Creation Platform
             </h2>
             <p className="font-heading font-semibold text-2xl sm:text-3xl text-gradient-create text-glow">Read. Listen. Create.</p>
           </div>

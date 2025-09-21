@@ -43,7 +43,7 @@ const AppSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 space-y-6">
             <h2 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl">
-              The Theta App
+              Comprehensive Digital Library Experience
             </h2>
             <p className="font-heading font-semibold text-2xl sm:text-3xl text-gradient-primary text-glow">
               Read. Listen. Become.
