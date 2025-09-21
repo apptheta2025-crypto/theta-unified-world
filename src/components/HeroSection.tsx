@@ -86,7 +86,7 @@ const HeroSection = () => {
                   waitlistSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 size="lg"
-                className="bg-gradient-cta hover:shadow-glow transition-all duration-300 font-bold px-12 py-4 text-lg shadow-2xl hover:scale-105 relative overflow-hidden group"
+                className="bg-gradient-cta hover:shadow-glow transition-all duration-300 font-bold px-12 py-4 text-lg shadow-2xl hover:scale-105 relative overflow-hidden group rounded-full"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   🚀 Join Waitlist
