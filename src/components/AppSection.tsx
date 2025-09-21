@@ -1,4 +1,4 @@
-import { BookOpen, Headphones, Upload, Sparkles, List, Bookmark } from 'lucide-react';
+import { BookOpen, Headphones, Upload, Sparkles, List } from 'lucide-react';
 
 const features = [{
   icon: BookOpen,
@@ -21,40 +21,61 @@ const features = [{
   title: 'Smart Tools',
   description: 'Create playlists, bookmark pages, highlight text, and generate instant AI summaries of books.'
 }];
-const AppSection = () => {
-  return <section id="app" className="py-16 lg:py-24 bg-background">
-      <div className="container-wide">
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-8 lg:space-y-10">
-            <div className="space-y-4">
-              <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl">
-                The Theta App
-              </h2>
-              <p className="font-heading font-semibold text-xl sm:text-2xl text-gradient-primary">
-                Read. Listen. Become.
-              </p>
-            </div>
 
-            <div className="space-y-6">
-              {features.map((feature, index) => <div key={index} className="flex gap-4 group">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:shadow-glow transition-spring">
-                      <feature.icon className="w-6 h-6 text-primary-foreground" />
+const AppSection = () => {
+  return (
+    <section id="app" className="relative py-16 lg:py-24 bg-gradient-to-br from-background via-primary/5 to-accent/10 overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 bg-gradient-subtle opacity-60" />
+      
+      {/* Floating Book Icons */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-2xl blur-xl opacity-40 animate-float" />
+      <div className="absolute top-40 right-16 w-16 h-16 bg-accent/30 rounded-full blur-lg opacity-50 animate-blob animation-delay-2s" />
+      <div className="absolute bottom-32 left-20 w-24 h-24 bg-gradient-primary rounded-3xl blur-2xl opacity-30 animate-pulse-slow" />
+      
+      {/* Geometric Pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+        backgroundSize: '40px 40px'
+      }} />
+
+      <div className="container-wide relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 space-y-6">
+            <h2 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl">
+              The Theta App
+            </h2>
+            <p className="font-heading font-semibold text-2xl sm:text-3xl text-gradient-primary text-glow">
+              Read. Listen. Become.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="group relative">
+                <div className="relative p-6 bg-card/80 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-glow hover:-translate-y-2">
+                  {/* Feature glow effect */}
+                  <div className="absolute inset-0 bg-gradient-primary rounded-2xl blur-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 -z-10" />
+                  
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:shadow-glow group-hover:scale-110 transition-spring">
+                      <feature.icon className="w-8 h-8 text-primary-foreground" />
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="font-heading font-semibold text-lg text-foreground">
+                    <h3 className="font-heading font-semibold text-xl text-foreground group-hover:text-gradient-primary transition-colors">
                       {feature.title}
                     </h3>
                     <p className="font-body text-foreground/70 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
-                </div>)}
-            </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AppSection;
