@@ -35,7 +35,7 @@ const CreateSection = () => {
               <img 
                 src={createMockup} 
                 alt="Theta Create App Interface" 
-                className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto rounded-xl"
+                className="w-full h-auto rounded-xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-accent-create/20 to-transparent rounded-xl blur-2xl -z-10" />
             </div>
