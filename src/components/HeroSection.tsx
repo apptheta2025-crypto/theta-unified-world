@@ -66,7 +66,7 @@ const HeroSection = () => {
               <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
                 Theta: Unified Platform for
                 <br />
-                <span className="text-gradient-primary text-glow animate-pulse-slow">Ebooks, Audiobooks</span>
+                <span className="text-gradient-primary text-glow animate-pulse-slow">Universe</span>
                 <br />
                 & Podcasts
               </h1>
