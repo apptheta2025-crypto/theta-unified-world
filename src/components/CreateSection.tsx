@@ -1,32 +1,23 @@
 import { PenTool, Mic, Upload, BarChart } from 'lucide-react';
-
-
-const features = [
-  {
-    icon: PenTool,
-    title: 'AI Writing Studio',
-    description: 'Go from a simple idea to a complete, structured manuscript with an intelligent writing assistant.'
-  },
-  {
-    icon: Mic,
-    title: 'Instant Audiobooks',
-    description: 'Convert your finished ebook into a high-quality, human-like audiobook in minutes using AI. Choose from a variety of voices, accents, and languages.'
-  },
-  {
-    icon: Upload,
-    title: 'One-Click Publishing',
-    description: 'Publish your ebook and audiobook directly to the global Theta audience with a single click.'
-  },
-  {
-    icon: BarChart,
-    title: 'Creator Analytics',
-    description: 'Track reads, listens, completion rates, and audience demographics to understand your impact and grow your audience.'
-  }
-];
-
+const features = [{
+  icon: PenTool,
+  title: 'AI Writing Studio',
+  description: 'Go from a simple idea to a complete, structured manuscript with an intelligent writing assistant.'
+}, {
+  icon: Mic,
+  title: 'Instant Audiobooks',
+  description: 'Convert your finished ebook into a high-quality, human-like audiobook in minutes using AI. Choose from a variety of voices, accents, and languages.'
+}, {
+  icon: Upload,
+  title: 'One-Click Publishing',
+  description: 'Publish your ebook and audiobook directly to the global Theta audience with a single click.'
+}, {
+  icon: BarChart,
+  title: 'Creator Analytics',
+  description: 'Track reads, listens, completion rates, and audience demographics to understand your impact and grow your audience.'
+}];
 const CreateSection = () => {
-  return (
-    <section id="creators" className="relative py-16 lg:py-24 bg-gradient-dark text-white overflow-hidden">
+  return <section id="creators" className="relative py-16 lg:py-24 bg-gradient-dark text-white overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 bg-gradient-mesh-dark opacity-70" />
       
@@ -37,14 +28,14 @@ const CreateSection = () => {
       
       {/* Circuit Pattern */}
       <div className="absolute inset-0 opacity-[0.05]" style={{
-        backgroundImage: `linear-gradient(90deg, hsl(var(--accent-create)) 1px, transparent 1px), linear-gradient(hsl(var(--accent-create)) 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }} />
+      backgroundImage: `linear-gradient(90deg, hsl(var(--accent-create)) 1px, transparent 1px), linear-gradient(hsl(var(--accent-create)) 1px, transparent 1px)`,
+      backgroundSize: '60px 60px'
+    }} />
       
       {/* Diagonal Lines */}
       <div className="absolute inset-0 opacity-[0.08]" style={{
-        backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, hsl(var(--accent-create)) 35px, hsl(var(--accent-create)) 36px)`
-      }} />
+      backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, hsl(var(--accent-create)) 35px, hsl(var(--accent-create)) 36px)`
+    }} />
 
       <div className="container-wide relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -52,14 +43,11 @@ const CreateSection = () => {
             <h2 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-white">
               Theta Create
             </h2>
-            <p className="font-heading font-semibold text-2xl sm:text-3xl text-gradient-create text-glow">
-              Write. Publish. Inspire.
-            </p>
+            <p className="font-heading font-semibold text-2xl sm:text-3xl text-gradient-create text-glow">Read. Listen. Create.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {features.map((feature, index) => (
-              <div key={index} className="group relative">
+            {features.map((feature, index) => <div key={index} className="group relative">
                 <div className="relative p-8 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:border-accent-create/50 transition-all duration-500 hover:shadow-glow-create hover:-translate-y-3 h-80">
                   {/* Feature glow effect */}
                   <div className="absolute inset-0 bg-gradient-create rounded-3xl blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10" />
@@ -78,13 +66,10 @@ const CreateSection = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CreateSection;
