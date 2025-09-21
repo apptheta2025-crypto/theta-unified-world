@@ -78,18 +78,21 @@ const HeroSection = () => {
               </p>
             </div>
 
-            {/* Email Signup Form */}
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
-              <div className="flex flex-col sm:flex-row gap-3">
-                
-                <Button type="submit" disabled={isSubmitting} className="bg-gradient-primary hover:shadow-glow transition-all duration-300 font-semibold px-8 py-3">
-                  {isSubmitting ? 'Joining...' : 'Join Waitlist'}
-                </Button>
-              </div>
-              <p className="text-sm text-foreground/60 text-center">
-                Be the first to experience the future of content consumption
-              </p>
-            </form>
+            {/* Join Waitlist Button */}
+            <div className="flex justify-center">
+              <Button 
+                onClick={() => {
+                  const waitlistSection = document.getElementById('wishlist');
+                  waitlistSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-gradient-primary hover:shadow-glow transition-all duration-300 font-semibold px-8 py-3"
+              >
+                Join Waitlist
+              </Button>
+            </div>
+            <p className="text-sm text-foreground/60 text-center">
+              Be the first to experience the future of content consumption
+            </p>
             
           </div>
         </div>
