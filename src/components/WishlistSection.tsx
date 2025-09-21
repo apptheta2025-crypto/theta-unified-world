@@ -51,6 +51,16 @@ const WishlistSection = () => {
           title: "You're in for 2 months FREE! 🎉",
           description: "Welcome to the Theta universe. We'll keep you posted on our launch."
         });
+        
+        // Send welcome email
+        try {
+          await supabase.functions.invoke('send-welcome-email', {
+            body: { email, source: 'wishlist' }
+          });
+        } catch (emailError) {
+          console.error('Error sending welcome email:', emailError);
+        }
+        
         setEmail('');
         setWaitlistCount(prev => prev + 1);
       }
@@ -79,6 +89,16 @@ const WishlistSection = () => {
         title: "Creator interest noted! 🚀",
         description: "We'll reach out with exclusive creator beta access."
       });
+      
+      // Send creator welcome email
+      try {
+        await supabase.functions.invoke('send-welcome-email', {
+          body: { email: creatorEmail, source: 'creator' }
+        });
+      } catch (emailError) {
+        console.error('Error sending creator welcome email:', emailError);
+      }
+      
       setShowCreatorModal(false);
     } catch (error) {
       toast({
