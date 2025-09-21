@@ -78,7 +78,7 @@ const HeroSection = () => {
                 className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-6 h-12 transition-spring rounded-md"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Joining...' : 'Join the Wishlist'}
+                {isSubmitting ? 'Joining...' : 'Join the waitlist'}
               </Button>
             </form>
           </div>
