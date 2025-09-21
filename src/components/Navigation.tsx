@@ -51,7 +51,7 @@ const Navigation = () => {
             onClick={scrollToWishlist}
             className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-6 py-2 transition-spring"
           >
-            Join Wishlist
+            Join the waitlist
           </Button>
         </div>
       </div>
