@@ -45,7 +45,7 @@ const FlywheelSection = () => {
               {steps.map((step, index) => (
                 <div key={index} className="relative">
                   {/* Step Card */}
-                  <div className="bg-card border border-border rounded-2xl p-6 space-y-4 group hover:shadow-lg transition-spring h-48 flex flex-col">
+                  <div className="bg-card border border-border rounded-2xl p-6 space-y-4 group hover:shadow-lg transition-spring h-56 flex flex-col">
                     <div className="flex justify-center">
                       <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:shadow-glow transition-spring">
                         <step.icon className="w-8 h-8 text-primary-foreground" />
