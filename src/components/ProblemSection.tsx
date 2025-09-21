@@ -1,6 +1,8 @@
 import { Puzzle } from 'lucide-react';
+
 const ProblemSection = () => {
-  return <section className="relative py-16 lg:py-24 overflow-hidden">
+  return (
+    <section className="relative py-16 lg:py-24 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-primary rounded-full blur-3xl animate-blob"></div>
@@ -38,7 +40,11 @@ const ProblemSection = () => {
                 🎯 End Content Fragmentation with Theta's Unified Platform
               </h3>
               
-              
+              <p className="font-body text-lg text-foreground/80 leading-relaxed">
+                Today's content consumers face a frustrating reality: juggling separate apps for ebooks, different platforms for audiobooks, 
+                and yet another service for podcasts. This fragmentation creates friction in your content consumption, 
+                making it harder to maintain reading habits and discover new content across formats.
+              </p>
               
               <p className="font-body text-base text-foreground/75 leading-relaxed">
                 <strong>Theta's mission</strong> is to unify your entire content universe into one seamless, beautiful experience. 
@@ -47,13 +53,43 @@ const ProblemSection = () => {
                 between formats based on your context and preferences.
               </p>
               
+              <p className="font-body text-base text-foreground/70 leading-relaxed">
+                Imagine starting an ebook during your morning commute, seamlessly switching to the audiobook version 
+                while driving, and discovering related podcast episodes during your lunch break - all within the same platform, 
+                with perfect synchronization and intelligent recommendations. This is the Theta vision: 
+                <em>unified, intelligent, and effortless content consumption</em>.
+              </p>
               
-              
-              
+              <div className="flex justify-center pt-4">
+                <div className="text-sm text-foreground/60 space-y-1 text-center">
+                  <p>Learn more about digital content platforms:</p>
+                  <div className="space-x-3">
+                    <a 
+                      href="https://www.goodreads.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-glow transition-colors underline"
+                    >
+                      Goodreads Reading Community
+                    </a>
+                    <span>•</span>
+                    <a 
+                      href="https://www.audible.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary-glow transition-colors underline"
+                    >
+                      Audible Audiobooks
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ProblemSection;
