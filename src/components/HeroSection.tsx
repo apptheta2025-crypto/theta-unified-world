@@ -77,9 +77,7 @@ const HeroSection = () => {
                 </p>
                 
                 <p className="font-body text-base sm:text-lg text-foreground/75 leading-relaxed">
-                  Experience seamless switching between reading and listening with our AI-powered content discovery. 
-                  Import your local files, discover new content, and enjoy synchronized progress across all formats. 
-                  Theta revolutionizes how you consume digital content by breaking down barriers between different media types.
+                  Seamlessly switch between reading and listening with AI-powered discovery and synchronized progress across all formats.
                 </p>
                 
                 
