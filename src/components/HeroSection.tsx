@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import appMockup from '@/assets/theta-home-mockup.png';
+
 const HeroSection = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -61,8 +61,7 @@ const HeroSection = () => {
     }} />
 
       <div className="container-wide relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
+        <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-8 lg:space-y-10">
             <div className="space-y-6">
               <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
@@ -82,17 +81,6 @@ const HeroSection = () => {
 
             {/* Email Signup Form */}
             
-          </div>
-
-          {/* App Mockup */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative group">
-              <img src={appMockup} alt="Theta App Mockup" className="max-w-full h-auto rounded-3xl shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:shadow-glow" />
-              
-              {/* Enhanced glow effects */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent-create/10 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-              <div className="absolute -inset-4 bg-gradient-primary rounded-3xl blur-2xl opacity-10 animate-pulse-slow -z-20" />
-            </div>
           </div>
         </div>
       </div>

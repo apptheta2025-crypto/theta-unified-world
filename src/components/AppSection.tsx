@@ -1,5 +1,5 @@
 import { BookOpen, Headphones, Upload, Sparkles, List, Bookmark } from 'lucide-react';
-import appMockup from '@/assets/theta-search-mockup.png';
+
 const features = [{
   icon: BookOpen,
   title: 'Unified Library',
@@ -24,8 +24,7 @@ const features = [{
 const AppSection = () => {
   return <section id="app" className="py-16 lg:py-24 bg-background">
       <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Features List */}
+        <div className="max-w-4xl mx-auto">
           <div className="space-y-8 lg:space-y-10">
             <div className="space-y-4">
               <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl">
@@ -52,19 +51,6 @@ const AppSection = () => {
                     </p>
                   </div>
                 </div>)}
-            </div>
-          </div>
-
-          {/* App Mockup */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative group">
-              <img 
-                src={appMockup} 
-                alt="Theta App Search Interface" 
-                className="max-w-full h-auto rounded-3xl shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:shadow-glow"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent-create/10 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-              <div className="absolute -inset-4 bg-gradient-primary rounded-3xl blur-2xl opacity-10 animate-pulse-slow -z-20" />
             </div>
           </div>
         </div>

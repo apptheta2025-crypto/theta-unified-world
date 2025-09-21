@@ -1,5 +1,5 @@
 import { PenTool, Mic, Upload, BarChart } from 'lucide-react';
-import createMockup from '@/assets/theta-ebooks-mockup.png';
+
 
 const features = [
   {
@@ -28,20 +28,7 @@ const CreateSection = () => {
   return (
     <section id="creators" className="py-16 lg:py-24 bg-gradient-dark text-white">
       <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Creator Dashboard Mockup */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative">
-              <img 
-                src={createMockup} 
-                alt="Theta Ebooks Library Interface" 
-                className="w-full h-auto rounded-3xl shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-glow-create"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-accent-create/20 to-transparent rounded-xl blur-2xl -z-10" />
-            </div>
-          </div>
-
-          {/* Features List */}
+        <div className="max-w-4xl mx-auto">
           <div className="space-y-8 lg:space-y-10">
             <div className="space-y-4">
               <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl">
