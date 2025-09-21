@@ -2,17 +2,47 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import appMockup from '@/assets/theta-app-mockup.jpg';
 const HeroSection = () => {
   const [email, setEmail] = useState('');
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email || isSubmitting) return;
+
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([{ email, source: 'hero' }]);
+
+      if (error) {
+        if (error.code === '23505') { // unique constraint violation
+          toast({
+            title: "Already on the list!",
+            description: "This email is already registered for our waitlist."
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "Welcome to the Theta Universe!",
+          description: "You've been added to our wishlist. We'll notify you when we launch."
+        });
+        setEmail('');
+      }
+    } catch (error) {
       toast({
-        title: "Welcome to the Theta Universe!",
-        description: "You've been added to our wishlist. We'll notify you when we launch."
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive"
       });
-      setEmail('');
+    } finally {
+      setIsSubmitting(false);
     }
   };
   return <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-subtle">
@@ -34,9 +64,21 @@ const HeroSection = () => {
 
             {/* Email Signup Form */}
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md rounded-lg">
-              <Input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-12 px-4 font-body border-border focus-visible:ring-primary" required />
-              <Button type="submit" className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-6 h-12 transition-spring rounded-md">
-                Join the Wishlist
+              <Input 
+                type="email" 
+                placeholder="Enter your email" 
+                value={email} 
+                onChange={e => setEmail(e.target.value)} 
+                className="flex-1 h-12 px-4 font-body border-border focus-visible:ring-primary" 
+                required 
+                disabled={isSubmitting}
+              />
+              <Button 
+                type="submit" 
+                className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-6 h-12 transition-spring rounded-md"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Joining...' : 'Join the Wishlist'}
               </Button>
             </form>
           </div>

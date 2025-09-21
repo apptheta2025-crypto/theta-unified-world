@@ -2,16 +2,46 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 const WishlistSection = () => {
   const [email, setEmail] = useState('');
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email || isSubmitting) return;
+
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([{ email, source: 'wishlist' }]);
+
+      if (error) {
+        if (error.code === '23505') { // unique constraint violation
+          toast({
+            title: "Already on the list!",
+            description: "This email is already registered for our waitlist."
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "You're in!",
+          description: "Welcome to the Theta universe. We'll keep you posted on our launch."
+        });
+        setEmail('');
+      }
+    } catch (error) {
       toast({
-        title: "You're in!",
-        description: "Welcome to the Theta universe. We'll keep you posted on our launch."
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive"
       });
-      setEmail('');
+    } finally {
+      setIsSubmitting(false);
     }
   };
   return <section id="wishlist" className="py-16 lg:py-24 bg-gradient-subtle text-foreground">
@@ -30,9 +60,21 @@ const WishlistSection = () => {
 
           {/* Email Signup Form */}
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-            <Input type="email" placeholder="your.email@example.com" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary" required />
-            <Button type="submit" className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring">
-              Count Me In!
+            <Input 
+              type="email" 
+              placeholder="your.email@example.com" 
+              value={email} 
+              onChange={e => setEmail(e.target.value)} 
+              className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary" 
+              required 
+              disabled={isSubmitting}
+            />
+            <Button 
+              type="submit" 
+              className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Adding...' : 'Count Me In!'}
             </Button>
           </form>
 
