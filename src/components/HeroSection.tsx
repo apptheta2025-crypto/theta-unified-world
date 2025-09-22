@@ -72,10 +72,10 @@ const HeroSection = () => {
               </h1>
               
               <div className="space-y-4 max-w-3xl mx-auto">
-                <p className="font-body text-lg sm:text-xl text-foreground/90 leading-relaxed">📚 Ebooks • 🎧 Audiobooks • 🎙️ Podcasts.</p>
+                <p className="font-body text-lg sm:text-xl text-foreground/90 leading-relaxed">📚 Digital Books & Ebooks • 🎧 Audiobooks & Audio Content • 🎙️ Podcasts & Audio Shows</p>
                 
                 <p className="font-body text-base sm:text-lg text-foreground/75 leading-relaxed">
-                  Seamlessly switch between reading and listening with AI-powered discovery and synchronized progress across all formats.
+                  Revolutionary content platform that seamlessly switches between reading and listening. AI-powered content discovery with synchronized progress across all digital media formats.
                 </p>
                 
                 
@@ -97,7 +97,7 @@ const HeroSection = () => {
               </Button>
             </div>
             <p className="text-sm text-foreground/60 text-center">
-              Be the first to experience the future of content consumption
+              Be the first to experience the future of digital content consumption and multimedia library management
             </p>
             
           </div>

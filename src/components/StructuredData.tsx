@@ -7,7 +7,7 @@ const StructuredData = () => {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Theta",
-      "description": "Unified platform for ebooks, audiobooks, and podcasts",
+      "description": "Ultimate digital library platform for ebooks, audiobooks, and podcasts with AI-powered content discovery and seamless format switching",
       "url": "https://theta.lovableproject.com",
       "logo": "https://storage.googleapis.com/gpt-engineer-file-uploads/iJN771walYfdNUZNwzWnchBG9512/uploads/1758453165494-Theta Logo PNG.png",
       "sameAs": [
@@ -25,7 +25,7 @@ const StructuredData = () => {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Theta",
-      "description": "Unified platform for ebooks, audiobooks, and podcasts. Experience seamless switching between reading and listening with AI-powered content discovery.",
+      "description": "Revolutionary digital content platform combining ebooks, audiobooks, and podcasts. AI-powered multimedia library with seamless switching between reading and listening, unified progress tracking, and intelligent content discovery.",
       "url": "https://theta.lovableproject.com",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Web Browser",
