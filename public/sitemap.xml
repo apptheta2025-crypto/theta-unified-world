@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
     <loc>https://theta.lovableproject.com/</loc>
-    <lastmod>2025-09-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-09-22</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://storage.googleapis.com/gpt-engineer-file-uploads/iJN771walYfdNUZNwzWnchBG9512/uploads/1758453165494-Theta Logo PNG.png</image:loc>
+      <image:title>Theta Logo - Digital Library Platform</image:title>
+      <image:caption>Theta unified platform for ebooks, audiobooks, and podcasts</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://storage.googleapis.com/gpt-engineer-file-uploads/iJN771walYfdNUZNwzWnchBG9512/social-images/social-1758453313306-Screenshot 2025-09-21 at 4.44.37 PM.png</image:loc>
+      <image:title>Theta App Interface</image:title>
+      <image:caption>Revolutionary content platform interface</image:caption>
+    </image:image>
   </url>
 </urlset>

@@ -9,12 +9,14 @@ import WishlistSection from '@/components/WishlistSection';
 import Footer from '@/components/Footer';
 import StructuredData from '@/components/StructuredData';
 import SitemapGenerator from '@/components/SitemapGenerator';
+import SEOOptimizer from '@/components/SEOOptimizer';
 
 const Index = () => {
   return (
     <>
       <StructuredData />
       <SitemapGenerator />
+      <SEOOptimizer />
       <div className="min-h-screen">
         <Navigation />
         <main>

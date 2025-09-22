@@ -1,14 +1,22 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
 
 # Sitemap
 Sitemap: https://theta.lovableproject.com/sitemap.xml
 
-# Block admin pages
-Disallow: /admin/
-Disallow: /api/
-
 # SEO optimizations  
+Crawl-delay: 1
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot  
+Allow: /
 Crawl-delay: 1
 
 # Social media bots
