@@ -33,7 +33,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center group cursor-pointer" onClick={scrollToTop}>
-            <img src={thetaLogo} alt="Theta" className="h-10 w-10 transition-transform group-hover:rotate-12 group-hover:scale-110" />
+            <img src={thetaLogo} alt="Theta" className="h-12 w-12 transition-transform group-hover:rotate-12 group-hover:scale-110" />
           </div>
 
           {/* Center Navigation */}
