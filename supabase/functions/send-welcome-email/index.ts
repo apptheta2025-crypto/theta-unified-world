@@ -39,7 +39,7 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const emailResponse = await resend.emails.send({
-      from: "Theta Team <noreply@theta.co.in>",
+      from: "Theta Team <communications@theta.co.in>",
       to: [email],
       subject: isCreator ? "Welcome to Theta Create - Turn Your Expertise Into Revenue!" : "You're in! Welcome to the future of reading and listening.",
       html: isCreator ? `
