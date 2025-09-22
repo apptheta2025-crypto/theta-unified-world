@@ -33,7 +33,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2 group cursor-pointer" onClick={scrollToTop}>
-            <img src={thetaLogo} alt="Theta" className="h-8 w-8 transition-transform group-hover:rotate-12 group-hover:scale-110" />
+            <img src={thetaLogo} alt="Theta" className="h-10 w-10 transition-transform group-hover:rotate-12 group-hover:scale-110" />
             <span className="font-heading font-bold text-xl text-gradient-primary">Theta</span>
           </div>
 
