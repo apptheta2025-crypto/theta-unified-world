@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import StructuredData from '@/components/StructuredData';
 import SitemapGenerator from '@/components/SitemapGenerator';
 import SEOOptimizer from '@/components/SEOOptimizer';
+import BroadcastTest from '@/components/BroadcastTest';
 
 const Index = () => {
   return (
@@ -30,6 +31,7 @@ const Index = () => {
         </main>
         <Footer />
       </div>
+      <BroadcastTest />
     </>
   );
 };
