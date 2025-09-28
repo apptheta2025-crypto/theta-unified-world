@@ -56,11 +56,11 @@ const HeroSection = () => {
         }}
       />
 
-      <div className="container-wide relative z-10 flex items-end justify-center min-h-full pb-16 lg:pb-24">
+      <div className="container-wide relative z-10 flex items-end justify-center min-h-full pb-8 lg:pb-12">
         <div className="max-w-2xl text-center">
-          <div className="space-y-12">
-            <div className="space-y-8">
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white">
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h1 className="font-inter font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white" style={{letterSpacing: '-0.06em'}}>
                 Theta: The Unified
                 <br />
                 <span className="text-gradient-primary text-glow animate-pulse-slow">Universe</span>
