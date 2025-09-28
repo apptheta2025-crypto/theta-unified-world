@@ -44,62 +44,24 @@ const HeroSection = () => {
       setIsSubmitting(false);
     }
   };
-  return <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-hero-to-problem overflow-hidden">
-      {/* Dynamic Background Elements */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-80" />
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{
+      background: 'linear-gradient(135deg, #000000 0%, #1a0a2e 30%, #4a0e4e 70%, #6a1b9a 100%)'
+    }}>
       
-      {/* Floating Geometric Shapes */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-primary rounded-full blur-2xl opacity-20 animate-blob" />
-      <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-create rounded-full blur-xl opacity-30 animate-float" />
-      <div className="absolute bottom-20 left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
-      
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 opacity-5" style={{
-      backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-      backgroundSize: '50px 50px'
-    }} />
-
       <div className="container-wide relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="space-y-8 lg:space-y-10">
-            <div className="space-y-6">
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
-                Theta: The Unified
-                <br />
-                <span className="text-gradient-primary text-glow animate-pulse-slow">Universe</span>
-                <br />
-                for Content
-              </h1>
-              
-              <div className="space-y-4 max-w-3xl mx-auto">
-                <p className="font-body text-lg sm:text-xl text-foreground/90 leading-relaxed">📚 Digital Books & Ebooks • 🎧 Audiobooks & Audio Content • 🎙️ Podcasts & Audio Shows</p>
-                
-                <p className="font-body text-base sm:text-lg text-foreground/75 leading-relaxed">
-                  Revolutionary content platform that seamlessly switches between reading and listening. AI-powered content discovery with synchronized progress across all digital media formats.
-                </p>
-                
-                
-              </div>
+        <div className="flex flex-col items-center justify-center text-center space-y-12">
+          {/* 3D Theta Symbol */}
+          <div className="relative">
+            <div className="text-9xl md:text-[12rem] lg:text-[15rem] font-bold text-transparent bg-clip-text animate-pulse-slow"
+                 style={{
+                   background: 'linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #9333ea 100%)',
+                   WebkitBackgroundClip: 'text',
+                   WebkitTextFillColor: 'transparent',
+                   textShadow: '0 0 60px rgba(168, 85, 247, 0.5), 0 0 120px rgba(168, 85, 247, 0.3)',
+                   filter: 'drop-shadow(0 20px 40px rgba(168, 85, 247, 0.4))'
+                 }}>
+              Θ
             </div>
-
-            {/* Join Waitlist Button */}
-            <div className="flex justify-center">
-              <Button onClick={() => {
-              const waitlistSection = document.getElementById('wishlist');
-              waitlistSection?.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }} size="lg" className="bg-gradient-cta hover:shadow-glow transition-all duration-300 font-bold px-12 py-4 text-lg shadow-2xl hover:scale-105 relative overflow-hidden group rounded-full">
-                <span className="relative z-10 flex items-center gap-2">
-                  🚀 Join Waitlist
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></div>
-              </Button>
-            </div>
-            <p className="text-sm text-foreground/60 text-center">
-              Be the first to experience the future of digital content consumption and multimedia library management
-            </p>
-            
           </div>
         </div>
       </div>
