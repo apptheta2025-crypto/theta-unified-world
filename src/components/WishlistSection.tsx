@@ -5,7 +5,10 @@ import { Label } from '@/components/ui/label';
 import { useState, useEffect } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const WishlistSection = () => {
+  const [sectionRef, isVisible] = useScrollAnimation({ triggerOnce: true });
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCreatorModal, setShowCreatorModal] = useState(false);
@@ -112,7 +115,13 @@ const WishlistSection = () => {
       });
     }
   };
-  return <section id="wishlist" className="py-16 lg:py-24 bg-gradient-subtle text-foreground">
+  return <section 
+      ref={sectionRef}
+      id="wishlist" 
+      className={`py-16 lg:py-24 bg-gradient-subtle text-foreground transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+      }`}
+    >
       <div className="container-wide">
         <div className="text-center space-y-8 lg:space-y-10 max-w-3xl mx-auto">
           {/* Header */}

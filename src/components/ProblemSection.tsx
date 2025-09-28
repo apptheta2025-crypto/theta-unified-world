@@ -1,6 +1,16 @@
 import { Puzzle } from 'lucide-react';
+import { useState } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const ProblemSection = () => {
-  return <section className="relative py-16 lg:py-24 bg-gradient-problem-to-benefits overflow-hidden">
+  const [sectionRef, isVisible] = useScrollAnimation({ triggerOnce: true });
+  const [currentProblem, setCurrentProblem] = useState(0);
+  return <section 
+      ref={sectionRef}
+      className={`relative py-16 lg:py-24 bg-gradient-problem-to-benefits overflow-hidden transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+      }`}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-primary rounded-full blur-3xl animate-blob"></div>

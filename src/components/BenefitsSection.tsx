@@ -1,5 +1,8 @@
 import { BookOpen, Headphones, Mic, Zap, Users, Globe } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const BenefitsSection = () => {
+  const [sectionRef, isVisible] = useScrollAnimation({ triggerOnce: true });
   const benefits = [{
     icon: <BookOpen className="w-8 h-8 text-primary" />,
     title: "Unified Content Library",
@@ -25,7 +28,12 @@ const BenefitsSection = () => {
     title: "Global Content Access",
     description: "Explore content from creators worldwide. Multi-language support and cultural diversity at your fingertips."
   }];
-  return <section className="py-16 lg:py-24 bg-gradient-benefits-to-app">
+  return <section 
+      ref={sectionRef}
+      className={`py-16 lg:py-24 bg-gradient-benefits-to-app transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+      }`}
+    >
       <div className="container-wide">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-6">

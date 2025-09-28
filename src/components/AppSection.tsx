@@ -1,4 +1,6 @@
 import { BookOpen, Headphones, Upload, Sparkles, List } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const features = [{
   icon: BookOpen,
   title: 'Unified Library',
@@ -21,7 +23,15 @@ const features = [{
   description: 'Create playlists, bookmark pages, highlight text, and generate instant AI summaries of books.'
 }];
 const AppSection = () => {
-  return <section id="app" className="relative py-16 lg:py-24 bg-gradient-app-to-create overflow-hidden">
+  const [sectionRef, isVisible] = useScrollAnimation({ triggerOnce: true });
+
+  return <section 
+      ref={sectionRef}
+      id="app" 
+      className={`relative py-16 lg:py-24 bg-gradient-app-to-create overflow-hidden transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+      }`}
+    >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 bg-gradient-subtle opacity-60" />
       

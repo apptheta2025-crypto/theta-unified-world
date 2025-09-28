@@ -1,4 +1,5 @@
 import { PenTool, Upload, Users, TrendingUp, ArrowRight } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const steps = [
   {
@@ -24,8 +25,15 @@ const steps = [
 ];
 
 const FlywheelSection = () => {
+  const [sectionRef, isVisible] = useScrollAnimation({ triggerOnce: true });
+
   return (
-    <section className="py-16 lg:py-24 bg-gradient-flywheel-to-wishlist">
+    <section 
+      ref={sectionRef}
+      className={`py-16 lg:py-24 bg-gradient-flywheel-to-wishlist transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+      }`}
+    >
       <div className="container-wide">
         <div className="text-center space-y-12 lg:space-y-16">
           {/* Header */}

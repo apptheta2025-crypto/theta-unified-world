@@ -1,4 +1,6 @@
 import { PenTool, Mic, Upload, BarChart } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
 const features = [{
   icon: PenTool,
   title: 'AI Writing Studio',
@@ -17,7 +19,15 @@ const features = [{
   description: 'Track reads, listens, completion rates, and audience demographics to understand your impact and grow your audience.'
 }];
 const CreateSection = () => {
-  return <section id="creators" className="relative py-16 lg:py-24 bg-gradient-create-to-flywheel text-white overflow-hidden">
+  const [sectionRef, isVisible] = useScrollAnimation({ triggerOnce: true });
+
+  return <section 
+      ref={sectionRef}
+      id="creators" 
+      className={`relative py-16 lg:py-24 bg-gradient-create-to-flywheel text-white overflow-hidden transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+      }`}
+    >
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 bg-gradient-mesh-dark opacity-70" />
       
