@@ -56,8 +56,8 @@ const HeroSection = () => {
         }}
       />
 
-      <div className="container-wide relative z-10 flex items-center justify-start min-h-full pl-8 lg:pl-16">
-        <div className="max-w-2xl text-left">
+      <div className="container-wide relative z-10 flex items-end justify-center min-h-full pb-16 lg:pb-24">
+        <div className="max-w-2xl text-center">
           <div className="space-y-12">
             <div className="space-y-8">
               <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white">
@@ -70,7 +70,7 @@ const HeroSection = () => {
             </div>
 
             {/* Join Waitlist Button */}
-            <div className="flex justify-start">
+            <div className="flex justify-center">
               <Button onClick={() => {
               const waitlistSection = document.getElementById('wishlist');
               waitlistSection?.scrollIntoView({
