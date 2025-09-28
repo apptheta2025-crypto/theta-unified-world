@@ -45,7 +45,7 @@ const HeroSection = () => {
       setIsSubmitting(false);
     }
   };
-  return <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+  return <section className="relative w-full aspect-video min-h-screen flex items-center justify-center overflow-hidden">
       {/* Theta Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
@@ -59,7 +59,7 @@ const HeroSection = () => {
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
 
-      <div className="container-wide relative z-10">
+      <div className="container-wide relative z-10 flex items-center justify-center min-h-full">
         <div className="max-w-4xl mx-auto text-center">
           <div className="space-y-12">
             <div className="space-y-8">
