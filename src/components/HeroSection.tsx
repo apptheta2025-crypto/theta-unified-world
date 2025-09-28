@@ -60,7 +60,7 @@ const HeroSection = () => {
         <div className="max-w-2xl text-center">
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="font-inter font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white" style={{letterSpacing: '-0.06em'}}>
+              <h1 className="font-inter font-extrabold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-tight text-white" style={{letterSpacing: '-0.06em'}}>
                 The Unified
                 <br />
                 <span className="text-gradient-primary text-glow animate-pulse-slow">Universe</span>
