@@ -61,8 +61,8 @@ const HeroSection = () => {
 
       <div className="container-wide relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="space-y-8 lg:space-y-10">
-            <div className="space-y-6">
+          <div className="space-y-12">
+            <div className="space-y-8">
               <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
                 Theta: The Unified
                 <br />
@@ -70,16 +70,6 @@ const HeroSection = () => {
                 <br />
                 for Content
               </h1>
-              
-              <div className="space-y-4 max-w-3xl mx-auto">
-                <p className="font-body text-lg sm:text-xl text-foreground/90 leading-relaxed">📚 Digital Books & Ebooks • 🎧 Audiobooks & Audio Content • 🎙️ Podcasts & Audio Shows</p>
-                
-                <p className="font-body text-base sm:text-lg text-foreground/75 leading-relaxed">
-                  Revolutionary content platform that seamlessly switches between reading and listening. AI-powered content discovery with synchronized progress across all digital media formats.
-                </p>
-                
-                
-              </div>
             </div>
 
             {/* Join Waitlist Button */}
@@ -96,10 +86,6 @@ const HeroSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></div>
               </Button>
             </div>
-            <p className="text-sm text-foreground/60 text-center">
-              Be the first to experience the future of digital content consumption and multimedia library management
-            </p>
-            
           </div>
         </div>
       </div>
