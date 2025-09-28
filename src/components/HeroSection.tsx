@@ -48,7 +48,7 @@ const HeroSection = () => {
   return <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
       {/* Theta Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{
           backgroundImage: `url(${thetaBg})`,
           backgroundSize: 'cover',
@@ -58,20 +58,6 @@ const HeroSection = () => {
       
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
-      
-      {/* Dynamic Background Elements */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
-      
-      {/* Floating Geometric Shapes */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-primary rounded-full blur-2xl opacity-20 animate-blob" />
-      <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-create rounded-full blur-xl opacity-30 animate-float" />
-      <div className="absolute bottom-20 left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
-      
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 opacity-5" style={{
-      backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-      backgroundSize: '50px 50px'
-    }} />
 
       <div className="container-wide relative z-10">
         <div className="max-w-4xl mx-auto text-center">
