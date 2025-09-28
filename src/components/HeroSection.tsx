@@ -55,15 +55,12 @@ const HeroSection = () => {
           backgroundPosition: 'center',
         }}
       />
-      
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
 
-      <div className="container-wide relative z-10 flex items-center justify-center min-h-full">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="container-wide relative z-10 flex items-center justify-start min-h-full pl-8 lg:pl-16">
+        <div className="max-w-2xl text-left">
           <div className="space-y-12">
             <div className="space-y-8">
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
+              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white">
                 Theta: The Unified
                 <br />
                 <span className="text-gradient-primary text-glow animate-pulse-slow">Universe</span>
@@ -73,7 +70,7 @@ const HeroSection = () => {
             </div>
 
             {/* Join Waitlist Button */}
-            <div className="flex justify-center">
+            <div className="flex justify-start">
               <Button onClick={() => {
               const waitlistSection = document.getElementById('wishlist');
               waitlistSection?.scrollIntoView({
