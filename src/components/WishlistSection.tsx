@@ -55,7 +55,7 @@ const WishlistSection = () => {
         }
       } else {
         toast({
-          title: "You're in for 2 months FREE! 🎉",
+          title: "You're in for 3 months FREE! 🎉",
           description: "Welcome to the Theta universe. We'll keep you posted on our launch."
         });
 
@@ -161,7 +161,7 @@ const WishlistSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Input type="email" placeholder="your.email@example.com" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary rounded-l-full" required disabled={isSubmitting} />
               <Button type="submit" className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full" disabled={isSubmitting || !agreeToUpdates}>
-                {isSubmitting ? 'Adding...' : 'Get 2 Months FREE'}
+                {isSubmitting ? 'Adding...' : 'Get 3 Months FREE'}
               </Button>
             </div>
             
