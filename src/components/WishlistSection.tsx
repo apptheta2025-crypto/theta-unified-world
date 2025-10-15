@@ -6,9 +6,10 @@ import { useState, useEffect } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-
 const WishlistSection = () => {
-  const [sectionRef, isVisible] = useScrollAnimation({ triggerOnce: true });
+  const [sectionRef, isVisible] = useScrollAnimation({
+    triggerOnce: true
+  });
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCreatorModal, setShowCreatorModal] = useState(false);
@@ -57,16 +58,18 @@ const WishlistSection = () => {
           title: "You're in for 2 months FREE! 🎉",
           description: "Welcome to the Theta universe. We'll keep you posted on our launch."
         });
-        
+
         // Send welcome email
         try {
           await supabase.functions.invoke('send-welcome-email', {
-            body: { email, source: 'wishlist' }
+            body: {
+              email,
+              source: 'wishlist'
+            }
           });
         } catch (emailError) {
           console.error('Error sending welcome email:', emailError);
         }
-        
         setEmail('');
         setAgreeToUpdates(false);
         setWaitlistCount(prev => prev + 1);
@@ -96,16 +99,18 @@ const WishlistSection = () => {
         title: "Creator interest noted! 🚀",
         description: "We'll reach out with exclusive creator beta access."
       });
-      
+
       // Send creator welcome email
       try {
         await supabase.functions.invoke('send-welcome-email', {
-          body: { email: creatorEmail, source: 'creator' }
+          body: {
+            email: creatorEmail,
+            source: 'creator'
+          }
         });
       } catch (emailError) {
         console.error('Error sending creator welcome email:', emailError);
       }
-      
       setShowCreatorModal(false);
     } catch (error) {
       toast({
@@ -115,13 +120,7 @@ const WishlistSection = () => {
       });
     }
   };
-  return <section 
-      ref={sectionRef}
-      id="wishlist" 
-      className={`py-16 lg:py-24 bg-gradient-subtle text-foreground transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
-      }`}
-    >
+  return <section ref={sectionRef} id="wishlist" className={`py-16 lg:py-24 bg-gradient-subtle text-foreground transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
       <div className="container-wide">
         <div className="text-center space-y-8 lg:space-y-10 max-w-3xl mx-auto">
           {/* Header */}
@@ -134,7 +133,7 @@ const WishlistSection = () => {
             <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 max-w-2xl mx-auto">
               <p className="font-body text-xl font-semibold text-primary mb-2">🎁 Early Bird Special</p>
               <p className="font-body text-lg text-foreground/90 leading-relaxed">
-                Join now for a chance to get <span className="font-bold text-gradient-primary">2 months of Theta Premium free</span> when we launch!
+                Join now for a chance to get <span className="font-bold text-gradient-primary">3 months of Theta Premium free</span> when we launch!
               </p>
             </div>
             
@@ -168,16 +167,8 @@ const WishlistSection = () => {
             
             {/* Agreement Checkbox */}
             <div className="flex items-center space-x-2 justify-center">
-              <Checkbox 
-                id="agree-updates" 
-                checked={agreeToUpdates} 
-                onCheckedChange={(checked) => setAgreeToUpdates(!!checked)}
-                disabled={isSubmitting}
-              />
-              <Label 
-                htmlFor="agree-updates" 
-                className="text-sm text-foreground/70 cursor-pointer"
-              >
+              <Checkbox id="agree-updates" checked={agreeToUpdates} onCheckedChange={checked => setAgreeToUpdates(!!checked)} disabled={isSubmitting} />
+              <Label htmlFor="agree-updates" className="text-sm text-foreground/70 cursor-pointer">
                 I agree to receive email updates about Theta's launch and features
               </Label>
             </div>
