@@ -29,8 +29,8 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Sending broadcast email to:", email);
 
     // Default URLs
-    const defaultWebsiteUrl = websiteUrl || "https://theta.lovableproject.com";
-    const defaultLogoUrl = logoUrl || "https://theta.lovableproject.com/src/assets/theta-logo.png";
+    const defaultWebsiteUrl = websiteUrl || "https://theta.co.in";
+    const defaultLogoUrl = logoUrl || "https://theta.co.in/src/assets/theta-logo.png";
 
     // Render the React email template
     const html = await renderAsync(

@@ -10,7 +10,7 @@ const SEOOptimizer = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://theta.lovableproject.com/"
+        "item": "https://theta.co.in/"
       }]
     };
 
@@ -19,7 +19,7 @@ const SEOOptimizer = () => {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Theta",
-      "url": "https://theta.lovableproject.com",
+      "url": "https://theta.co.in",
       "description": "Ultimate digital library platform for ebooks, audiobooks, and podcasts",
       "keywords": "ebooks, audiobooks, podcasts, digital library, book reader, audiobook player",
       "inLanguage": "en-US",
@@ -30,7 +30,7 @@ const SEOOptimizer = () => {
       },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://theta.lovableproject.com/?q={search_term_string}",
+        "target": "https://theta.co.in/?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     };
@@ -54,9 +54,9 @@ const SEOOptimizer = () => {
       { name: 'theme-color', content: '#6366f1' },
       { property: 'og:locale', content: 'en_US' },
       { property: 'og:site_name', content: 'Theta' },
-      { property: 'article:publisher', content: 'https://theta.lovableproject.com' },
+      { property: 'article:publisher', content: 'https://theta.co.in' },
       { name: 'twitter:creator', content: '@theta_platform' },
-      { name: 'twitter:domain', content: 'theta.lovableproject.com' },
+      { name: 'twitter:domain', content: 'theta.co.in' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
       { name: 'apple-mobile-web-app-title', content: 'Theta' }
