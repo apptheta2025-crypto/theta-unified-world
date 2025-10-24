@@ -95,9 +95,8 @@ const WishlistSection = () => {
     try {
       const {
         error
-      } = await supabase.from('waitlist').insert([{
-        email: creatorEmail,
-        source: 'creator'
+      } = await supabase.from('theta_create_waitlist').insert([{
+        email: creatorEmail
       }]);
       if (error) {
         if (error.code === '23505') {
