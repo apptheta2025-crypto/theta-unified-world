@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import Cookies from 'js-cookie';
 const WishlistSection = () => {
   const [sectionRef, isVisible] = useScrollAnimation({
     triggerOnce: true
@@ -18,7 +19,20 @@ const WishlistSection = () => {
   const [agreeToUpdates, setAgreeToUpdates] = useState(true);
   const [agreeToCreatorUpdates, setAgreeToCreatorUpdates] = useState(true);
   const [activeTab, setActiveTab] = useState('theta');
+  const [hasJoinedTheta, setHasJoinedTheta] = useState(false);
+  const [hasJoinedCreator, setHasJoinedCreator] = useState(false);
   useEffect(() => {
+    // Check cookies for existing waitlist membership
+    const thetaCookie = Cookies.get('theta_waitlist_joined');
+    const creatorCookie = Cookies.get('theta_create_waitlist_joined');
+    
+    if (thetaCookie === 'true') {
+      setHasJoinedTheta(true);
+    }
+    if (creatorCookie === 'true') {
+      setHasJoinedCreator(true);
+    }
+
     // Fetch waitlist count
     const fetchCount = async () => {
       try {
@@ -57,6 +71,10 @@ const WishlistSection = () => {
           throw error;
         }
       } else {
+        // Set cookie to remember user joined (expires in 1 year)
+        Cookies.set('theta_waitlist_joined', 'true', { expires: 365 });
+        setHasJoinedTheta(true);
+        
         toast({
           title: "You're in for 3 months FREE! 🎉",
           description: "Welcome to the Theta universe. We'll keep you posted on our launch."
@@ -108,6 +126,10 @@ const WishlistSection = () => {
           throw error;
         }
       } else {
+        // Set cookie to remember user joined creator waitlist (expires in 1 year)
+        Cookies.set('theta_create_waitlist_joined', 'true', { expires: 365 });
+        setHasJoinedCreator(true);
+        
         toast({
           title: "Creator interest noted! 🚀",
           description: "We'll reach out with exclusive creator beta access."
@@ -167,67 +189,89 @@ const WishlistSection = () => {
 
             {/* Theta Waitlist Tab */}
             <TabsContent value="theta" className="space-y-6">
-              {/* Incentive */}
-              <div className="bg-primary/10 border border-primary/20 rounded-xl p-6">
-                <p className="font-body text-xl font-semibold text-primary mb-2">🎁 Early Bird Special</p>
-                <p className="font-body text-lg text-foreground/90 leading-relaxed">
-                  Join now for a chance to get <span className="font-bold text-gradient-primary">3 months of Theta Premium free</span> when we launch!
-                </p>
-              </div>
-
-              {/* India Launch Notice */}
-              <div className="bg-accent/20 border border-accent/30 rounded-lg p-4">
-                <p className="font-body text-base text-foreground/80">
-                  🇮🇳 <span className="font-semibold">Launching soon in India</span> • Premium plans from <span className="font-bold text-primary">₹159/month</span>
-                </p>
-              </div>
-
-              {/* Email Signup Form */}
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Input type="email" placeholder="your.email@example.com" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary rounded-l-full" required disabled={isSubmitting} />
-                  <Button type="submit" className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full" disabled={isSubmitting || !agreeToUpdates}>
-                    {isSubmitting ? 'Adding...' : 'Get 3 Months FREE'}
-                  </Button>
+              {hasJoinedTheta ? (
+                <div className="bg-primary/10 border border-primary/20 rounded-xl p-8 text-center">
+                  <p className="font-body text-2xl font-semibold text-primary mb-2">✅ You're Already In!</p>
+                  <p className="font-body text-lg text-foreground/90 leading-relaxed">
+                    You've already joined the Theta waitlist. We'll notify you when we launch with your exclusive 3 months free offer!
+                  </p>
                 </div>
-                
-                {/* Agreement Checkbox */}
-                <div className="flex items-center space-x-2 justify-center">
-                  <Checkbox id="agree-updates" checked={agreeToUpdates} onCheckedChange={checked => setAgreeToUpdates(!!checked)} disabled={isSubmitting} />
-                  <Label htmlFor="agree-updates" className="text-sm text-foreground/70 cursor-pointer">
-                    I agree to receive email updates about Theta's launch and features
-                  </Label>
-                </div>
-              </form>
+              ) : (
+                <>
+                  {/* Incentive */}
+                  <div className="bg-primary/10 border border-primary/20 rounded-xl p-6">
+                    <p className="font-body text-xl font-semibold text-primary mb-2">🎁 Early Bird Special</p>
+                    <p className="font-body text-lg text-foreground/90 leading-relaxed">
+                      Join now for a chance to get <span className="font-bold text-gradient-primary">3 months of Theta Premium free</span> when we launch!
+                    </p>
+                  </div>
+
+                  {/* India Launch Notice */}
+                  <div className="bg-accent/20 border border-accent/30 rounded-lg p-4">
+                    <p className="font-body text-base text-foreground/80">
+                      🇮🇳 <span className="font-semibold">Launching soon in India</span> • Premium plans from <span className="font-bold text-primary">₹159/month</span>
+                    </p>
+                  </div>
+
+                  {/* Email Signup Form */}
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Input type="email" placeholder="your.email@example.com" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary rounded-l-full" required disabled={isSubmitting} />
+                      <Button type="submit" className="bg-gradient-cta hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full" disabled={isSubmitting || !agreeToUpdates}>
+                        {isSubmitting ? 'Adding...' : 'Get 3 Months FREE'}
+                      </Button>
+                    </div>
+                    
+                    {/* Agreement Checkbox */}
+                    <div className="flex items-center space-x-2 justify-center">
+                      <Checkbox id="agree-updates" checked={agreeToUpdates} onCheckedChange={checked => setAgreeToUpdates(!!checked)} disabled={isSubmitting} />
+                      <Label htmlFor="agree-updates" className="text-sm text-foreground/70 cursor-pointer">
+                        I agree to receive email updates about Theta's launch and features
+                      </Label>
+                    </div>
+                  </form>
+                </>
+              )}
             </TabsContent>
 
             {/* Theta Create Waitlist Tab */}
             <TabsContent value="creator" className="space-y-6">
-              {/* Creator Benefits */}
-              <div className="bg-primary/10 border border-primary/20 rounded-xl p-6">
-                <p className="font-body text-xl font-semibold text-primary mb-2">🚀 For Content Creators</p>
-                <p className="font-body text-lg text-foreground/90 leading-relaxed">
-                  Turn your expertise into premium content. Create courses, workshops, and exclusive content that generates revenue while you sleep.
-                </p>
-              </div>
+              {hasJoinedCreator ? (
+                <div className="bg-primary/10 border border-primary/20 rounded-xl p-8 text-center">
+                  <p className="font-body text-2xl font-semibold text-primary mb-2">✅ You're on the Creator List!</p>
+                  <p className="font-body text-lg text-foreground/90 leading-relaxed">
+                    You've already joined the Theta Create waitlist. We'll reach out with exclusive creator beta access soon!
+                  </p>
+                </div>
+              ) : (
+                <>
+                  {/* Creator Benefits */}
+                  <div className="bg-primary/10 border border-primary/20 rounded-xl p-6">
+                    <p className="font-body text-xl font-semibold text-primary mb-2">🚀 For Content Creators</p>
+                    <p className="font-body text-lg text-foreground/90 leading-relaxed">
+                      Turn your expertise into premium content. Create courses, workshops, and exclusive content that generates revenue while you sleep.
+                    </p>
+                  </div>
 
-              {/* Email Signup Form */}
-              <form onSubmit={handleCreatorSubmit} className="space-y-4">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Input type="email" placeholder="creator.email@example.com" value={creatorEmail} onChange={e => setCreatorEmail(e.target.value)} className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary rounded-l-full" required disabled={isSubmitting} />
-                  <Button type="submit" className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full" disabled={isSubmitting || !agreeToCreatorUpdates}>
-                    {isSubmitting ? 'Adding...' : 'Join Creator List'}
-                  </Button>
-                </div>
-                
-                {/* Agreement Checkbox */}
-                <div className="flex items-center space-x-2 justify-center">
-                  <Checkbox id="agree-creator-updates" checked={agreeToCreatorUpdates} onCheckedChange={checked => setAgreeToCreatorUpdates(!!checked)} disabled={isSubmitting} />
-                  <Label htmlFor="agree-creator-updates" className="text-sm text-foreground/70 cursor-pointer">
-                    I agree to receive email updates about Theta Create beta access
-                  </Label>
-                </div>
-              </form>
+                  {/* Email Signup Form */}
+                  <form onSubmit={handleCreatorSubmit} className="space-y-4">
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Input type="email" placeholder="creator.email@example.com" value={creatorEmail} onChange={e => setCreatorEmail(e.target.value)} className="flex-1 h-14 px-4 font-body bg-foreground/5 border-border text-foreground placeholder:text-foreground/60 focus-visible:ring-primary focus-visible:border-primary rounded-l-full" required disabled={isSubmitting} />
+                      <Button type="submit" className="bg-gradient-primary hover:shadow-glow font-body font-semibold px-8 h-14 transition-spring rounded-r-full" disabled={isSubmitting || !agreeToCreatorUpdates}>
+                        {isSubmitting ? 'Adding...' : 'Join Creator List'}
+                      </Button>
+                    </div>
+                    
+                    {/* Agreement Checkbox */}
+                    <div className="flex items-center space-x-2 justify-center">
+                      <Checkbox id="agree-creator-updates" checked={agreeToCreatorUpdates} onCheckedChange={checked => setAgreeToCreatorUpdates(!!checked)} disabled={isSubmitting} />
+                      <Label htmlFor="agree-creator-updates" className="text-sm text-foreground/70 cursor-pointer">
+                        I agree to receive email updates about Theta Create beta access
+                      </Label>
+                    </div>
+                  </form>
+                </>
+              )}
             </TabsContent>
           </Tabs>
         </div>
