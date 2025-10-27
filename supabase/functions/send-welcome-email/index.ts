@@ -91,10 +91,10 @@ const handler = async (req: Request): Promise<Response> => {
               <div style="text-align: center; margin-bottom: 24px;">
                 <p style="color: #6b7280; margin: 0 0 16px 0; font-size: 14px;">Follow us on social media:</p>
                 <div style="display: inline-block;">
-                  <a href="https://www.linkedin.com/company/apptheta/" style="display: inline-block; margin: 0 8px; text-decoration: none;">
+                  <a href="https://linkedin.com/company/apptheta" style="display: inline-block; margin: 0 8px; text-decoration: none;">
                     <img src="https://theta.co.in/icons/linkedin-icon.png" alt="LinkedIn" style="width: 24px; height: 24px;">
                   </a>
-                  <a href="https://www.instagram.com/theta.app_/" style="display: inline-block; margin: 0 8px; text-decoration: none;">
+                  <a href="https://instagram.com/theta.app_" style="display: inline-block; margin: 0 8px; text-decoration: none;">
                     <img src="https://theta.co.in/icons/instagram-icon.png" alt="Instagram" style="width: 24px; height: 24px;">
                   </a>
                 </div>
@@ -184,10 +184,10 @@ const handler = async (req: Request): Promise<Response> => {
               <div style="text-align: center; margin-bottom: 24px;">
                 <p style="color: #6b7280; margin: 0 0 16px 0; font-size: 14px;">Follow us on social media:</p>
                 <div style="display: inline-block;">
-                  <a href="https://www.linkedin.com/company/apptheta/" style="display: inline-block; margin: 0 8px; text-decoration: none;">
+                  <a href="https://linkedin.com/company/apptheta" style="display: inline-block; margin: 0 8px; text-decoration: none;">
                     <img src="https://theta.co.in/icons/linkedin-icon.png" alt="LinkedIn" style="width: 24px; height: 24px;">
                   </a>
-                  <a href="https://www.instagram.com/theta.app_/" style="display: inline-block; margin: 0 8px; text-decoration: none;">
+                  <a href="https://instagram.com/theta.app_" style="display: inline-block; margin: 0 8px; text-decoration: none;">
                     <img src="https://theta.co.in/icons/instagram-icon.png" alt="Instagram" style="width: 24px; height: 24px;">
                   </a>
                 </div>
