@@ -69,8 +69,8 @@ const HeroSection = () => {
               </h1>
             </div>
 
-            {/* Join Waitlist Button */}
-            <div className="flex justify-center">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button onClick={() => {
               const waitlistSection = document.getElementById('wishlist');
               waitlistSection?.scrollIntoView({
@@ -81,6 +81,16 @@ const HeroSection = () => {
                   🚀 Join Waitlist
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></div>
+              </Button>
+              <Button 
+                asChild
+                size="lg" 
+                variant="outline"
+                className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 font-bold px-12 py-4 text-lg shadow-2xl hover:scale-105 rounded-full"
+              >
+                <a href="https://create.theta.co.in" target="_blank" rel="noopener noreferrer">
+                  ✨ Try Theta Create Beta
+                </a>
               </Button>
             </div>
           </div>

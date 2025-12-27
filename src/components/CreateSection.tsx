@@ -76,6 +76,18 @@ const CreateSection = () => {
                 </div>
               </div>)}
           </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <a 
+              href="https://create.theta.co.in" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gradient-create hover:shadow-glow-create transition-all duration-300 font-bold px-12 py-4 text-lg shadow-2xl hover:scale-105 rounded-full text-white"
+            >
+              ✨ Try Theta Create Beta
+            </a>
+          </div>
         </div>
       </div>
     </section>;
