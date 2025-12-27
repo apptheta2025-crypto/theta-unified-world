@@ -47,20 +47,19 @@ const HeroSection = () => {
   };
   return <section className="relative w-full aspect-video min-h-screen flex items-center justify-center overflow-hidden">
       {/* Theta Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-        style={{
-          backgroundImage: `url(${thetaBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${thetaBg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }} />
 
       <div className="container-wide relative z-10 flex items-end justify-center min-h-full pb-8 lg:pb-12">
         <div className="max-w-2xl text-center">
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="font-inter font-extrabold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-tight text-white" style={{letterSpacing: '-0.06em'}}>
+              <h1 className="font-inter font-extrabold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-tight text-white" style={{
+              letterSpacing: '-0.06em'
+            }}>
                 The Unified
                 <br />
                 <span className="text-gradient-primary text-glow animate-pulse-slow">Universe</span>
@@ -71,29 +70,20 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button 
-                asChild
-                size="lg" 
-                className="bg-gradient-cta hover:shadow-glow transition-all duration-300 font-bold px-12 py-4 text-lg shadow-2xl hover:scale-105 relative overflow-hidden group rounded-full"
-              >
-                <a href="https://create.theta.co.in" target="_blank" rel="noopener noreferrer">
+              <Button asChild size="lg" className="bg-gradient-cta hover:shadow-glow transition-all duration-300 font-bold px-12 py-4 text-lg shadow-2xl hover:scale-105 relative overflow-hidden group rounded-full">
+                <a href="https://create.theta.co.in" target="_blank" rel="noopener noreferrer" className="bg-white/[0.02]">
                   <span className="relative z-10 flex items-center gap-2">
                     ✨ Try Theta Create Beta
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></div>
                 </a>
               </Button>
-              <Button 
-                onClick={() => {
-                  const waitlistSection = document.getElementById('wishlist');
-                  waitlistSection?.scrollIntoView({
-                    behavior: 'smooth'
-                  });
-                }} 
-                size="lg" 
-                variant="outline"
-                className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 font-bold px-12 py-6 shadow-2xl hover:scale-105 rounded-full flex flex-col items-center"
-              >
+              <Button onClick={() => {
+              const waitlistSection = document.getElementById('wishlist');
+              waitlistSection?.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }} size="lg" variant="outline" className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 font-bold py-6 shadow-2xl hover:scale-105 rounded-full flex flex-col items-center px-[47px] gap-0">
                 <span className="text-lg">🚀 Join Waitlist</span>
                 <span className="text-xs font-normal opacity-80">(For The Theta App)</span>
               </Button>
