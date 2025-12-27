@@ -70,8 +70,8 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button asChild size="lg" className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 font-bold py-6 shadow-2xl hover:scale-105 relative overflow-hidden group rounded-full">
-                <a href="https://create.theta.co.in" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center px-[47px] gap-0">
+              <Button asChild size="lg" className="bg-gradient-cta hover:shadow-glow transition-all duration-300 font-bold py-6 shadow-2xl hover:scale-105 relative overflow-hidden group rounded-full">
+                <a href="https://create.theta.co.in" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center px-[47px] gap-0 border rounded-lg border-solid border-muted-foreground bg-white/20">
                   <span className="relative z-10 flex items-center gap-2 text-lg">
                     ✨ Try Theta Create Beta
                   </span>
